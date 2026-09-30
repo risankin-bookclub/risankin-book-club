@@ -208,6 +208,263 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 }
 .von-caption h3,.paper-note h3{letter-spacing:-.035em!important}
 
+
+/* v6.4 — compact detailed archive shelf */
+.read-library{position:relative}
+.archive-stamp{
+ display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;
+ width:max-content;max-width:100%;margin:-6px 0 20px 12px;
+ padding:8px 12px;border:1px solid #171713;background:#eadfc7;
+ transform:rotate(-1.2deg);font-size:11px;text-transform:uppercase;letter-spacing:.12em
+}
+.archive-stamp b{font-size:13px}.archive-stamp span{opacity:.7}
+.shelf-detailed{
+ display:flex!important;align-items:flex-end!important;gap:7px!important;
+ min-height:225px!important;padding:20px 18px 17px!important;
+ background:#eee1c5!important;border:1px solid #171713!important;
+ box-shadow:7px 8px 0 #171713!important;position:relative!important;
+ overflow:visible!important
+}
+.shelf-detailed:after{
+ content:"";position:absolute;left:-7px;right:-7px;bottom:-15px;height:16px;
+ background:#8c5638;border:2px solid #171713;box-shadow:0 5px 0 #171713;z-index:0
+}
+.shelf-detailed .spine{
+ flex:1 1 0!important;min-width:0!important;width:auto!important;
+ height:168px!important;padding:10px 7px!important;margin:0!important;
+ border:1.5px solid #171713!important;box-shadow:2px 2px 0 #171713!important;
+ writing-mode:vertical-rl!important;transform:rotate(180deg)!important;
+ font-family:Georgia,"Times New Roman",serif!important;font-size:14px!important;
+ line-height:1.05!important;display:flex!important;justify-content:space-between!important;
+ position:relative!important;cursor:pointer!important
+}
+.shelf-detailed .spine small{font:10px Arial,sans-serif!important;letter-spacing:.04em!important}
+.shelf-detailed .s1{height:195px!important;background:#bb5b43!important}
+.shelf-detailed .s2{height:176px!important;background:#d4bd7b!important;transform:rotate(178deg)!important}
+.shelf-detailed .s3{height:160px!important;background:#79966d!important}
+.shelf-detailed .s4{height:184px!important;background:#6e88a6!important;transform:rotate(181deg)!important}
+.shelf-detailed .s5{height:171px!important;background:#d39b91!important}
+.shelf-detailed .s6{height:188px!important;background:#b87c4e!important;transform:rotate(179deg)!important}
+.shelf-detailed .s7{height:158px!important;background:#c6b66c!important}
+.shelf-detailed .s8{height:181px!important;background:#8a795e!important;transform:rotate(181deg)!important}
+.shelf-detailed .pulled{bottom:7px!important}
+.bookmark{position:absolute;width:7px;height:24px;background:#d8c58b;right:7px;bottom:-13px;z-index:4}
+.bookmark.blue{background:#4267a9}
+.pencil-mark{font-style:normal;position:absolute;right:7px;top:8px;font-size:13px}
+.archive-more{
+ display:block;width:max-content;max-width:100%;margin:38px auto 8px;
+ border-bottom:1px solid #171713;padding-bottom:4px;
+ font:16px Georgia,"Times New Roman",serif;text-decoration:none
+}
+@media(max-width:700px){
+ .shelf-detailed{gap:4px!important;min-height:176px!important;padding:15px 9px 12px!important}
+ .shelf-detailed .spine{font-size:9.5px!important;padding:7px 4px!important;box-shadow:1px 2px 0 #171713!important}
+ .shelf-detailed .spine small{font-size:8px!important}
+ .shelf-detailed .s1{height:155px!important}.shelf-detailed .s2{height:142px!important}
+ .shelf-detailed .s3{height:130px!important}.shelf-detailed .s4{height:148px!important}
+ .shelf-detailed .s5{height:138px!important}.shelf-detailed .s6{height:151px!important}
+ .shelf-detailed .s7{height:128px!important}.shelf-detailed .s8{height:146px!important}
+ .bookmark{width:5px;height:18px;right:4px}
+ .pencil-mark{font-size:9px;right:4px}
+}
+
+
+/* v6.5 — irregular physical books */
+.physical-shelf{position:relative;padding:10px 10px 0;margin-top:18px}
+.physical-books{height:220px;display:flex;align-items:flex-end;justify-content:center;gap:5px;position:relative;z-index:2}
+.pbook{appearance:none;-webkit-appearance:none;border:1.5px solid #171713;color:#171713;padding:0;position:relative;display:block;cursor:pointer;box-shadow:2px 2px 0 #171713;background:#ccc;flex:none}
+.pbook .title,.pbook .author{position:absolute;display:block}
+.pb1{width:56px;height:193px;background:#b95742;transform:rotate(-1.5deg)}
+.pb1:before,.pb1:after{content:"";position:absolute;left:5px;right:5px;border-top:1px solid #171713}.pb1:before{top:12px}.pb1:after{bottom:12px}
+.pb1 .title{writing-mode:vertical-rl;transform:rotate(180deg);font:16px/1 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;left:17px;top:25px}
+.pb1 .author{font:8px Arial,sans-serif;bottom:18px;left:7px;transform:rotate(-90deg);transform-origin:left bottom;white-space:nowrap}
+
+.pb2{width:78px;height:178px;background:#cdb77a;transform:rotate(1deg)}
+.pb2 .title{writing-mode:vertical-rl;transform:rotate(180deg);font:20px/.95 Georgia,serif;right:23px;top:15px}
+.pb2 .author{writing-mode:vertical-rl;transform:rotate(180deg);font:9px Arial,sans-serif;left:10px;bottom:13px}
+
+.pb3{width:37px;height:157px;background:#819872;transform:rotate(-2.5deg)}
+.pb3 .title{writing-mode:vertical-rl;transform:rotate(180deg);font:700 12px/1 Arial,sans-serif;text-transform:uppercase;left:10px;top:12px}
+.pb3 .author{display:none}
+
+.pb4{width:49px;height:184px;background:#6983a3}
+.pb4 .title{left:5px;right:5px;top:70px;border-top:1px solid #171713;border-bottom:1px solid #171713;padding:5px 0;font:700 13px Arial,sans-serif;letter-spacing:.12em}
+.pb4 .author{writing-mode:vertical-rl;transform:rotate(180deg);font:8px Arial,sans-serif;right:5px;bottom:12px}
+
+.pb5{width:84px;height:169px;background:#c98e83;transform:translateY(-6px) rotate(1.5deg)}
+.pb5 .title{writing-mode:vertical-rl;transform:rotate(180deg);font:22px/.9 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;right:23px;top:10px}
+.pb5 .author{writing-mode:vertical-rl;transform:rotate(180deg);font:9px Georgia,serif;left:11px;bottom:12px}
+
+.pb6{width:42px;height:188px;background:#b47749;transform:rotate(-1deg)}
+.pb6:before{content:"";position:absolute;left:4px;right:4px;top:8px;bottom:8px;border:1px solid #171713}
+.pb6 .title{writing-mode:vertical-rl;transform:rotate(180deg);font:italic 15px Georgia,serif;left:12px;top:28px}
+.pb6 .author{display:none}
+
+.pb7{width:65px;height:151px;background:#c1ae64;transform:rotate(2.5deg)}
+.pb7 .title{writing-mode:vertical-rl;transform:rotate(180deg);font:700 15px Arial,sans-serif;right:19px;top:13px}
+.pb7 .author{font:8px Arial,sans-serif;left:7px;bottom:8px}
+
+.pb8{width:51px;height:181px;background:#81715b;transform:rotate(-1deg)}
+.pb8 .title{writing-mode:vertical-rl;transform:rotate(180deg);font:13px/1.05 Georgia,serif;left:15px;top:10px}
+.pb8 .author{font:8px Arial,sans-serif;right:5px;bottom:7px;transform:rotate(-90deg);transform-origin:right bottom;white-space:nowrap}
+
+.shelf-board{height:16px;background:#875338;border:2px solid #171713;box-shadow:0 6px 0 #171713;margin:-1px -6px 0;position:relative;z-index:3}
+.archive-more{display:block;width:max-content;max-width:100%;margin:35px auto 8px;border-bottom:1px solid #171713;padding-bottom:4px;font:16px Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:700px){
+ .physical-shelf{padding-left:0;padding-right:0}
+ .physical-books{height:174px;gap:3px;transform-origin:center bottom}
+ .pb1{width:43px;height:153px}.pb1 .title{font-size:11px;left:13px}
+ .pb2{width:58px;height:142px}.pb2 .title{font-size:15px;right:17px}
+ .pb3{width:28px;height:124px}.pb3 .title{font-size:9px;left:7px}
+ .pb4{width:37px;height:147px}.pb4 .title{font-size:9px;top:56px}
+ .pb5{width:62px;height:135px}.pb5 .title{font-size:15px;right:17px}
+ .pb6{width:31px;height:150px}.pb6 .title{font-size:11px;left:8px}
+ .pb7{width:48px;height:120px}.pb7 .title{font-size:10px;right:14px}
+ .pb8{width:39px;height:144px}.pb8 .title{font-size:9px;left:11px}
+ .pbook .author{font-size:6px}
+}
+
+
+/* v6.6 — shelf typography cleanup: prevent overlapping */
+.pbook .title{
+  overflow:hidden!important;
+  text-overflow:clip!important;
+  letter-spacing:0!important;
+}
+.pb1 .title{font-size:13px!important;line-height:1.08!important;left:16px!important;top:24px!important;max-height:142px!important}
+.pb2 .title{font-size:17px!important;line-height:1.05!important;right:25px!important;top:14px!important;max-height:145px!important}
+.pb3 .title{font-size:10px!important;line-height:1.05!important;left:11px!important;top:11px!important;max-height:132px!important}
+.pb4 .title{font-size:11px!important;line-height:1!important;letter-spacing:.07em!important}
+.pb5 .title{font-size:18px!important;line-height:1!important;right:26px!important;top:11px!important;max-height:143px!important}
+.pb6 .title{font-size:13px!important;line-height:1.05!important;left:13px!important;top:26px!important;max-height:135px!important}
+.pb7 .title{font-size:12px!important;line-height:1.05!important;right:21px!important;top:12px!important;max-height:124px!important}
+.pb8 .title{font-size:10px!important;line-height:1.08!important;left:17px!important;top:9px!important;max-height:155px!important}
+
+@media(max-width:700px){
+ .pb1 .title{font-size:9px!important;left:12px!important;max-height:112px!important}
+ .pb2 .title{font-size:12px!important;right:18px!important;max-height:114px!important}
+ .pb3 .title{font-size:7px!important;left:8px!important;max-height:103px!important}
+ .pb4 .title{font-size:8px!important;letter-spacing:.04em!important}
+ .pb5 .title{font-size:12px!important;right:18px!important;max-height:108px!important}
+ .pb6 .title{font-size:9px!important;left:9px!important;max-height:108px!important}
+ .pb7 .title{font-size:8px!important;right:14px!important;max-height:96px!important}
+ .pb8 .title{font-size:7.5px!important;left:12px!important;max-height:118px!important}
+}
+
+
+/* v6.7 — clean book-spine typography */
+.pbook .title,.pbook .author{
+  box-sizing:border-box!important;
+  overflow:visible!important;
+}
+.pbook .title{
+  writing-mode:vertical-rl!important;
+  transform:rotate(180deg)!important;
+  position:absolute!important;
+  top:10px!important;
+  bottom:10px!important;
+  left:50%!important;
+  right:auto!important;
+  height:auto!important;
+  max-height:none!important;
+  width:auto!important;
+  white-space:nowrap!important;
+  font-family:"Arial Narrow",Arial,sans-serif!important;
+  font-style:normal!important;
+  font-weight:500!important;
+  line-height:1!important;
+  letter-spacing:-.02em!important;
+  translate:-50% 0!important;
+}
+.pbook .author{display:none!important}
+
+/* each title sized to its available spine height */
+.pb1 .title{font-size:10px!important}
+.pb2 .title{font-size:13px!important;font-family:Georgia,"Times New Roman",serif!important}
+.pb3 .title{font-size:10px!important;font-weight:700!important}
+.pb4 .title{
+  writing-mode:horizontal-tb!important;
+  transform:none!important;
+  translate:-50% -50%!important;
+  top:50%!important;bottom:auto!important;
+  width:100%!important;text-align:center!important;
+  white-space:normal!important;
+  font-size:11px!important;font-weight:700!important;letter-spacing:.08em!important;
+  padding:5px 2px!important
+}
+.pb5 .title{font-size:14px!important;font-weight:600!important}
+.pb6 .title{font-size:12px!important;font-family:Georgia,"Times New Roman",serif!important}
+.pb7 .title{font-size:12px!important;font-weight:700!important}
+.pb8 .title{font-size:8.5px!important;font-family:Georgia,"Times New Roman",serif!important}
+
+@media(max-width:700px){
+ .pbook .title{top:8px!important;bottom:8px!important}
+ .pb1 .title{font-size:7.5px!important}
+ .pb2 .title{font-size:10px!important}
+ .pb3 .title{font-size:7.5px!important}
+ .pb4 .title{top:50%!important;font-size:8px!important}
+ .pb5 .title{font-size:10.5px!important}
+ .pb6 .title{font-size:9px!important}
+ .pb7 .title{font-size:9px!important}
+ .pb8 .title{font-size:6.5px!important}
+}
+
+
+/* v6.8 — give the long Hotel title clear space between spine rules */
+.pb1 .title{
+  top:24px!important;
+  bottom:24px!important;
+  font-size:9px!important;
+}
+@media(max-width:700px){
+ .pb1 .title{
+   top:21px!important;
+   bottom:21px!important;
+   font-size:6.9px!important;
+ }
+}
+
+
+/* v6.9 — Hotel spine: remove rules so the long title has clean space */
+.pb1:before,.pb1:after{display:none!important}
+.pb1 .title{
+  top:12px!important;
+  bottom:12px!important;
+  font-size:9px!important;
+}
+@media(max-width:700px){
+ .pb1 .title{
+   top:9px!important;
+   bottom:9px!important;
+   font-size:7.2px!important;
+ }
+}
+
+
+/* v6.10 — Gone with the Wind spine decoration */
+.pb2:before{
+  content:"";
+  position:absolute;
+  left:8px; right:8px;
+  top:11px; bottom:11px;
+  border:1px solid rgba(23,23,19,.75);
+  pointer-events:none;
+}
+.pb2:after{
+  content:"◆";
+  position:absolute;
+  left:50%;
+  bottom:16px;
+  transform:translateX(-50%) rotate(45deg);
+  font:8px Georgia,serif;
+  line-height:1;
+  pointer-events:none;
+}
+@media(max-width:700px){
+ .pb2:before{left:6px;right:6px;top:8px;bottom:8px}
+ .pb2:after{bottom:11px;font-size:6px}
+}
+
 </style>
 </head>
 <body>
@@ -252,18 +509,25 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
     </article>
   </div>
 </section>
-<section id="read">
+<section id="read" class="read-library real-books">
 <h2 class="section-title">Мы прочитали</h2>
-<div class="shelf">
-<div class="spine" onclick="openBook(this)" style="height:205px;background:#bb5b43">Унесённые ветром <small>8,8</small></div>
-<div class="spine" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" style="height:175px;background:#6e88a6">Все лето в один день <small>6,6</small></div>
-<div class="spine" style="height:215px;background:#c6b66c">Если все кошки в мире исчезнут <small>7,5</small></div>
-<div class="spine" style="height:188px;background:#79966d">Доллар и двадцать центов <small>5,5</small></div>
-<div class="spine" style="height:198px;background:#d39b91">Пикник на обочине <small>—</small></div>
-<div class="spine" style="height:220px;background:#657aa0">Над кукушкиным гнездом <small>—</small></div>
-<div class="spine" style="height:180px;background:#b87c4e">451° по Фаренгейту <small>—</small></div>
-<div class="spine" style="height:210px;background:#8a795e">Скотный двор <small>—</small></div>
+<div class="archive-stamp"><b>14 книг</b><span>средняя оценка 7,6</span></div>
+
+<div class="physical-shelf">
+  <div class="physical-books">
+    <button class="pbook pb1" onclick="openBook(this)"><span class="title">Отель «У погибшего альпиниста»</span><span class="author">Стругацкие</span></button>
+    <button class="pbook pb2" onclick="openBook(this)"><span class="title">Унесённые ветром</span><span class="author">М. Митчелл</span></button>
+    <button class="pbook pb3" onclick="openBook(this)"><span class="title">Бедный принц</span><span class="author">А. Куприн</span></button>
+    <button class="pbook pb4" onclick="openBook(this)"><span class="title">ЧТЕЦ</span><span class="author">Б. Шлинк</span></button>
+    <button class="pbook pb5" onclick="openBook(this)"><span class="title">Бойцовский клуб</span><span class="author">Чак Паланик</span></button>
+    <button class="pbook pb6" onclick="openBook(this)"><span class="title">Дядя Ваня</span><span class="author">А. П. Чехов</span></button>
+    <button class="pbook pb7" onclick="openBook(this)"><span class="title">Сжечь сарай</span><span class="author">Х. Мураками</span></button>
+    <button class="pbook pb8" onclick="openBook(this)"><span class="title">Если все кошки в мире исчезнут</span><span class="author">Г. Кавамура</span></button>
+  </div>
+  <div class="shelf-board"></div>
 </div>
+
+<a class="archive-more" href="#read">Открыть остальной архив →</a>
 </section>
 
 <section id="stats">

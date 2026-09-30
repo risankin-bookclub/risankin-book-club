@@ -272,7 +272,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 /* v6.5 — irregular physical books */
 .physical-shelf{position:relative;padding:10px 10px 0;margin-top:18px}
 .physical-books{height:220px;display:flex;align-items:flex-end;justify-content:center;gap:5px;position:relative;z-index:2}
-.pbook{appearance:none;-webkit-appearance:none;border:1.5px solid #171713;color:#171713;padding:0;position:relative;display:block;cursor:pointer;box-shadow:2px 2px 0 #171713;background:#ccc;flex:none}
+.pbook{text-decoration:none;appearance:none;-webkit-appearance:none;border:1.5px solid #171713;color:#171713;padding:0;position:relative;display:block;cursor:pointer;box-shadow:2px 2px 0 #171713;background:#ccc;flex:none}
 .pbook .title,.pbook .author{position:absolute;display:block}
 .pb1{width:56px;height:193px;background:#b95742;transform:rotate(-1.5deg)}
 .pb1:before,.pb1:after{content:"";position:absolute;left:5px;right:5px;border-top:1px solid #171713}.pb1:before{top:12px}.pb1:after{bottom:12px}
@@ -515,7 +515,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 
 <div class="physical-shelf">
   <div class="physical-books">
-    <button class="pbook pb1" onclick="openBook(this)"><span class="title">Отель «У погибшего альпиниста»</span><span class="author">Стругацкие</span></button>
+    <a class="pbook pb1" href="hotel.html"><span class="title">Отель «У погибшего альпиниста»</span><span class="author">Стругацкие</span></a>
     <button class="pbook pb2" onclick="openBook(this)"><span class="title">Унесённые ветром</span><span class="author">М. Митчелл</span></button>
     <button class="pbook pb3" onclick="openBook(this)"><span class="title">Бедный принц</span><span class="author">А. Куприн</span></button>
     <button class="pbook pb4" onclick="openBook(this)"><span class="title">ЧТЕЦ</span><span class="author">Б. Шлинк</span></button>

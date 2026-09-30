@@ -65,6 +65,18 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 .fake-cover{min-height:330px;background:#ddd0ad;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:34px}
 .book-page h2{font:400 48px Georgia,serif;margin:12px 0}.review{font:18px/1.5 Georgia,serif}.big-rating{font:60px Georgia,serif;margin-top:20px}
 @media(max-width:760px){.book-page{grid-template-columns:1fr;padding:28px;overflow:auto;max-height:90vh}.fake-cover{min-height:220px}}
+
+.cover-art{height:190px;overflow:hidden!important;padding:0!important;background:#d8cfb4!important}
+.cover-art img{width:100%;height:100%;object-fit:cover;display:block}
+.current-large{transform:rotate(-1.3deg)!important;box-shadow:-5px 6px 0 #c8b38d}
+.current-small{transform:rotate(1.7deg)!important;box-shadow:6px 5px 0 #a6ad93}
+.dick-art{display:block!important;background:#df8b72!important;padding:12px!important}
+.dick-poster{height:100%;border:2px solid #171713;background:#d9b84b;padding:13px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-1deg)}
+.dick-poster b{font-family:"Arial Narrow",Arial,sans-serif;font-size:31px;line-height:.82;letter-spacing:-.04em}
+.dick-poster i{font-family:Georgia,serif;font-size:19px;line-height:1.05}.dick-poster span{font-size:10px;text-transform:uppercase;letter-spacing:.2em}
+.meeting:before{content:"";position:absolute;width:72px;height:20px;background:#d6c79e99;transform:rotate(-7deg);margin:-11px 0 0 38%;z-index:3}
+.meeting{position:relative}
+#read:after{content:"← нажми на корешок";font:italic 15px Georgia,serif;display:block;text-align:right;margin-top:12px;transform:rotate(-2deg)}
 </style>
 </head>
 <body>
@@ -73,21 +85,21 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 
 <header class="hero">
 <h1>Рисанкин<br>Книжный Клуб</h1>
-<div class="scribble">✶ № 01 · книжный архив</div>
+<div class="scribble">✶ книжный архив</div>
 </header>
 
 <section class="meeting" id="now">
 <div class="paper-card">
 <div class="tag">Следующая встреча</div>
 <h2>17 октября · 19:00</h2>
-<div class="date">17 октября · собираемся здесь снова</div>
+<div class="date">крупная + малая форма</div>
 <div class="reads">
-<div class="book-now"><span class="tag">Крупная форма</span>
-<div class="cover-art art1"><span>сюда — обложка / картинка</span></div>
-<h3>Название книги</h3><p>Автор · текущая книга</p></div>
-<div class="book-now"><span class="tag">Малая форма</span>
-<div class="cover-art art2"><span>сюда — обложка / картинка</span></div>
-<h3>Название рассказа</h3><p>Автор · малая форма</p></div>
+<div class="book-now current-large"><span class="tag">Крупная форма</span>
+<div class="cover-art art1"><img src="vremetryasenie.jpg" alt="Обложка Времетрясение"></div>
+<h3>Времетрясение</h3><p>Курт Воннегут</p></div>
+<div class="book-now current-small"><span class="tag">Малая форма</span>
+<div class="cover-art art2"><img src="philip-k-dick.jpg" alt="Обложка Филип К. Дик — Вспомнить всё"></div>
+<h3>Мы вам всё припомним</h3><p>Филип К. Дик</p></div>
 </div>
 </div>
 <div class="rsvp"><div class="tag">RSVP</div><h3>Ты будешь?</h3><div class="buttons"><button class="btn" onclick="rsvp(this,'Буду!')">Буду</button><button class="btn" onclick="rsvp(this,'Не буду')">Не буду</button></div><div id="rsvp-note"></div></div>
@@ -109,7 +121,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 
 <section id="stats">
 <h2 class="section-title">Статистика</h2>
-<div class="stats"><div class="stat"><span class="num">24</span><span>прочитано произведений</span></div><div class="stat"><span class="num">7,6</span><span>средняя оценка</span></div><div class="stat"><span class="num">∞</span><span>разговоров после последней страницы</span></div></div>
+<div class="stats"><div class="stat"><span class="num">24</span><span>прочитано произведений</span></div><div class="stat"><span class="num">7,6</span><span>средняя оценка</span></div><div class="stat"><span class="num">∞</span><span>«а вот я поняла это иначе»</span></div></div>
 </section>
 
 <section id="vote">

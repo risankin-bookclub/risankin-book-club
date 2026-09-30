@@ -77,6 +77,51 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 .meeting:before{content:"";position:absolute;width:72px;height:20px;background:#d6c79e99;transform:rotate(-7deg);margin:-11px 0 0 38%;z-index:3}
 .meeting{position:relative}
 #read:after{content:"← нажми на корешок";font:italic 15px Georgia,serif;display:block;text-align:right;margin-top:12px;transform:rotate(-2deg)}
+
+.venue{font:italic 16px Georgia,serif;margin-top:8px;transform:rotate(-.7deg);display:inline-block}
+.maplink{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;margin-left:6px;font-style:normal;font-family:Arial,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.current-large{transform:rotate(-2deg)!important;margin-left:-7px}
+.current-small{transform:rotate(1.5deg)!important;margin-left:10px;margin-top:20px}
+.current-large .tag{transform:rotate(1deg);display:inline-block}
+.current-small .tag{transform:rotate(-2deg);display:inline-block}
+@media(max-width:700px){
+  .meeting{padding-top:14px}
+  .date{font-size:clamp(42px,13vw,72px)!important;line-height:.9!important;letter-spacing:-.055em}
+  .venue{font-size:15px;max-width:85%;line-height:1.35;margin:13px 0 4px 12px}
+  .book-now{border-width:5px!important}
+  .current-large{width:94%!important;margin-left:0!important}
+  .current-small{width:91%!important;margin-left:6%!important;margin-top:28px!important}
+  .cover-art{height:420px!important;background:#efe4c9!important}
+  .cover-art img{object-fit:contain!important}
+  .book-now h3{font-size:31px!important;line-height:1!important;margin-top:20px!important}
+}
+
+/* v5 — stronger collage treatment */
+#now{position:relative}
+#now:before{content:"СЕЙЧАС";position:absolute;right:-18px;top:30px;font:700 11px Arial,sans-serif;letter-spacing:.28em;transform:rotate(90deg);opacity:.55}
+.books-now{display:grid!important;grid-template-columns:1.08fr .92fr!important;gap:0!important;align-items:start!important;position:relative;margin-top:36px!important}
+.book-now{box-shadow:none!important;background:transparent!important;border:0!important;padding:0!important;position:relative}
+.current-large{width:92%!important;margin:0!important;transform:rotate(-2.3deg)!important;z-index:2}
+.current-small{width:84%!important;margin:115px 0 0 -18px!important;transform:rotate(2.6deg)!important;z-index:3}
+.book-now .tag{position:absolute!important;z-index:5!important;background:#f4ebd2!important;border:1px solid #191814!important;padding:7px 10px!important;top:-17px!important;left:-10px!important}
+.current-small .tag{left:auto!important;right:-12px!important}
+.cover-art{height:auto!important;aspect-ratio:2/3!important;border:2px solid #181713!important;padding:12px!important;background:#eee2c4!important;box-sizing:border-box!important}
+.cover-art img{width:100%!important;height:100%!important;object-fit:contain!important}
+.current-large .cover-art{border:7px solid #c93c2f!important;box-shadow:-9px 10px 0 #d7c39a!important}
+.current-small .cover-art{border:7px solid #426db2!important;box-shadow:9px 10px 0 #aeb7a4!important}
+.book-now h3{font-family:Georgia,serif!important;font-weight:400!important;font-size:clamp(28px,4vw,48px)!important;line-height:.95!important;margin:22px 0 6px!important;letter-spacing:-.035em}
+.book-now p{margin:0!important;font-size:14px!important}
+.current-large:after{content:"крупная";position:absolute;right:-20px;bottom:50px;font:italic 15px Georgia,serif;transform:rotate(8deg)}
+.current-small:after{content:"малая";position:absolute;left:-17px;bottom:48px;font:italic 15px Georgia,serif;transform:rotate(-9deg)}
+@media(max-width:700px){
+ .books-now{display:block!important;margin-top:42px!important}
+ .current-large{width:88%!important;margin-left:1%!important;transform:rotate(-2.5deg)!important}
+ .current-small{width:82%!important;margin:46px 0 0 15%!important;transform:rotate(2.8deg)!important}
+ .cover-art{height:auto!important;aspect-ratio:2/3!important}
+ .book-now h3{font-size:34px!important}
+ .current-large:after{right:-30px!important}
+ .current-small:after{left:-35px!important}
+}
 </style>
 </head>
 <body>
@@ -91,8 +136,8 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 <section class="meeting" id="now">
 <div class="paper-card">
 <div class="tag">Следующая встреча</div>
-<h2>17 октября · 19:00</h2>
-<div class="date">крупная + малая форма</div>
+<h2>2 октября · 18:30</h2>
+<div class="venue">PaPaella · Банковский переулок, 2/5 <a class="maplink" href="https://yandex.ru/maps/?text=PaPaella%20Банковский%20переулок%202%2F5%20Москва" target="_blank" rel="noopener">↗ карта</a></div>
 <div class="reads">
 <div class="book-now current-large"><span class="tag">Крупная форма</span>
 <div class="cover-art art1"><img src="vremetryasenie.jpg" alt="Обложка Времетрясение"></div>

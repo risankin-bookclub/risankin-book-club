@@ -98,7 +98,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 
 /* v5 — stronger collage treatment */
 #now{position:relative}
-#now:before{content:"СЕЙЧАС";position:absolute;right:-18px;top:30px;font:700 11px Arial,sans-serif;letter-spacing:.28em;transform:rotate(90deg);opacity:.55}
+#now:before{content:"";display:none;position:absolute;right:-18px;top:30px;font:700 11px Arial,sans-serif;letter-spacing:.28em;transform:rotate(90deg);opacity:.55}
 .books-now{display:grid!important;grid-template-columns:1.08fr .92fr!important;gap:0!important;align-items:start!important;position:relative;margin-top:36px!important}
 .book-now{box-shadow:none!important;background:transparent!important;border:0!important;padding:0!important;position:relative}
 .current-large{width:92%!important;margin:0!important;transform:rotate(-2.3deg)!important;z-index:2}
@@ -191,6 +191,22 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
   .von-caption p{font-size:16px!important}
   .map-text{padding-right:0!important}
 }
+
+
+/* v6.2 — replace decorative italic */
+.place-line,.place-line em,.von-caption h3,.paper-note h3,.venue{
+ font-family:Georgia,"Times New Roman",serif!important;
+ font-style:normal!important;
+}
+.place-line em{font-weight:700!important}
+.map-text{
+ font-family:Arial,sans-serif!important;
+ font-style:normal!important;
+ text-transform:uppercase;
+ letter-spacing:.12em;
+ font-size:12px!important;
+}
+.von-caption h3,.paper-note h3{letter-spacing:-.035em!important}
 
 </style>
 </head>

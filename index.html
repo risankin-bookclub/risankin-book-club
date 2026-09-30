@@ -171,6 +171,27 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
  .doodle-red{display:none}
 }
 
+
+/* v6.1 mobile fixes */
+@media(max-width:700px){
+  .vonnegut{width:76%!important}
+  .von-caption{
+    position:relative!important;
+    left:auto!important; top:auto!important;
+    width:100%!important;
+    margin:20px 0 0 8px!important;
+    transform:rotate(1deg)!important;
+  }
+  .von-caption h3{
+    font-size:30px!important;
+    line-height:1!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  .von-caption p{font-size:16px!important}
+  .map-text{padding-right:0!important}
+}
+
 </style>
 </head>
 <body>
@@ -186,7 +207,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
   <div class="meeting-kicker">СЛЕДУЮЩАЯ ВСТРЕЧА</div>
   <div class="meeting-date">2 ОКТЯБРЯ · 18:30</div>
   <div class="place-line"><em>PaPaella</em> · Банковский переулок, 2/5
-    <a class="map-text" href="https://yandex.ru/maps/?text=PaPaella%20Банковский%20переулок%202%2F5%20Москва" target="_blank" rel="noopener">карта ↗</a>
+    <a class="map-text" href="https://yandex.ru/maps/?text=PaPaella%20Банковский%20переулок%202%2F5%20Москва" target="_blank" rel="noopener">карта</a>
   </div>
 
   <div class="reading-collage">

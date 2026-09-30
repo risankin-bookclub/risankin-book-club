@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Голосование — Рисанкин Книжный Клуб</title>
+<style>
+:root{--p:#f1e7d5;--i:#171713;--r:#a95346;--b:#708895;--y:#c8a449;--g:#78866d}
+*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;background:var(--p);color:var(--i);font-family:Arial,sans-serif;background-image:radial-gradient(#00000010 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}a{color:inherit;text-decoration:none}
+nav{display:flex;justify-content:space-between;border-bottom:1px solid;padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+.hero{padding:55px 0 45px}.ey{font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(70px,12vw,135px);line-height:.8;letter-spacing:-.07em;text-transform:uppercase;font-weight:400;margin:25px 0 20px;white-space:nowrap}
+.hero p{font:17px/1.4 Georgia,serif;max-width:560px}
+.form{border-top:1px solid;padding:40px 0 55px}
+.formhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px;gap:20px}
+h2{font:400 45px/.9 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:-.04em;margin:0}
+.formhead p{font:13px/1.3 Georgia,serif;max-width:260px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
+.book{display:block;position:relative;cursor:pointer}
+.book input{position:absolute;opacity:0;pointer-events:none}
+.paper{height:100%;min-height:350px;border:1px solid var(--i);padding:18px 15px 16px;background:#d8c7a4;transition:.12s;position:relative;box-shadow:3px 4px 0 var(--i)}
+.book:nth-child(2) .paper{background:#aebfc5;transform:rotate(-.6deg)}
+.book:nth-child(3) .paper{background:#d39b8e;transform:rotate(.5deg)}
+.book:nth-child(4) .paper{background:#c9ad5c;transform:rotate(-.4deg)}
+.book:nth-child(5) .paper{background:#aab19b;transform:rotate(.7deg)}
+.num{font:11px Arial,sans-serif;letter-spacing:.12em}.author{font-size:9px;text-transform:uppercase;letter-spacing:.11em;margin:24px 0 8px}
+.title{font:26px/.98 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:-.035em}
+.desc{font:13px/1.34 Georgia,serif;margin:18px 0 45px}
+.mark{position:absolute;left:15px;bottom:15px;width:25px;height:25px;border:1px solid;border-radius:50%;display:grid;place-items:center;font-size:0}
+.book input:checked+.paper{transform:translateY(-8px) rotate(-1deg);box-shadow:7px 9px 0 var(--i);outline:3px solid var(--i);outline-offset:-7px}
+.book input:checked+.paper .mark:after{content:"×";font:27px/20px Georgia,serif}
+.book input:checked+.paper .mark{font-size:1px;background:var(--p)}
+.counter{margin-top:18px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.submitbox{border-top:1px solid;padding:42px 0 75px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.submitbox h3{font:38px/1 Georgia,serif;margin:0 0 12px}.submitbox p{font:14px/1.4 Georgia,serif;margin:0;max-width:430px}
+button{appearance:none;border:1px solid var(--i);background:var(--i);color:var(--p);padding:20px 24px;font:12px Arial,sans-serif;text-transform:uppercase;letter-spacing:.15em;cursor:pointer;width:100%}
+button:disabled{opacity:.35;cursor:not-allowed}
+.done{display:none;margin-top:12px;font:13px/1.3 Georgia,serif}
+footer{border-top:1px solid;padding:20px 0 40px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:760px){
+.wrap{padding:0 16px}nav{padding-top:22px}.hero{padding:43px 0 37px}h1{font-size:clamp(44px,13.2vw,59px);letter-spacing:-.085em;padding-right:18px}
+.form{padding:34px 0 48px}.formhead{display:block}.formhead p{margin-top:12px}
+h2{font-size:39px}.cards{grid-template-columns:1fr;gap:15px}
+.paper{min-height:0;padding:18px 17px 55px}.title{font-size:31px}.desc{margin-bottom:8px}
+.book input:checked+.paper{transform:translateX(5px) rotate(-.4deg)}
+.submitbox{grid-template-columns:1fr;gap:25px;padding:38px 0 60px}.submitbox h3{font-size:31px}
+}
+
+.identity-modal{display:none;position:fixed;inset:0;background:#171713cc;z-index:100;padding:18px;align-items:center;justify-content:center}
+.identity-modal.show{display:flex}.identity-card{width:min(470px,100%);background:#f3ead7;border:1px solid #171713;box-shadow:8px 9px 0 #171713;padding:27px;position:relative;transform:rotate(-.4deg)}
+.identity-close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:30px}.identity-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.15em}
+.identity-card h2{font:36px/1 Georgia,serif;margin:17px 0 8px}.identity-card p{font:14px/1.4 Georgia,serif}.identity-card label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-top:15px}
+.identity-card input{display:block;width:100%;margin-top:6px;padding:13px;border:1px solid #171713;background:#f8f0df;font:17px Georgia,serif;border-radius:0}
+.identity-save{width:100%;margin-top:19px;padding:14px;border:1px solid #171713;background:#171713;color:#f3ead7;text-transform:uppercase;letter-spacing:.12em}
+#identity-error{font:12px Georgia,serif;margin-top:8px}.who-change{border:0;border-bottom:1px solid;background:none;padding:0;font:inherit;color:inherit}
+
+</style></head>
+<body><div class="wrap">
+<nav><b>РКК</b><a href="index.html">← на главную</a></nav>
+<header class="hero"><div class="ey">Следующая встреча · выбираем вместе</div><h1>Голосование</h1><p>Можно выбрать несколько произведений в каждом разделе. Отмечай всё, что действительно хотелось бы прочитать.</p></header>
+
+<section class="form" data-group="large"><div class="formhead"><h2>Крупная форма</h2><p>Можно выбрать несколько вариантов.</p></div><div class="cards">
+<label class="book"><input type="checkbox" data-book="creator-coincidences"><article class="paper"><div class="num">01</div><div class="author">Йоав Блум</div><div class="title">Творец совпадений</div><p class="desc">Трое молодых людей работают создателями совпадений: устраивают случайные встречи, подбрасывают нужные мысли и незаметно направляют чужие судьбы. Но однажды привычная работа превращается в историю, где любовь, свобода выбора и случайность оказываются связаны куда теснее, чем кажется.</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="on-earth-briefly-gorgeous"><article class="paper"><div class="num">02</div><div class="author">Оушен Вуонг</div><div class="title">Лишь краткий миг земной мы все прекрасны</div><p class="desc">Молодой писатель обращается к матери, которая никогда не сможет прочитать его письмо. Через историю семьи, войну, эмиграцию, бедность, первую любовь и взросление он пытается понять, что мы наследуем от близких.</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="inferno"><article class="paper"><div class="num">03</div><div class="author">Дэн Браун</div><div class="title">Инферно</div><p class="desc">Роберт Лэнгдон приходит в себя во флорентийской больнице без памяти о последних днях. Загадочный предмет, Данте и чужой замысел заставляют его пройти по следам «Ада».</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="star-ticket"><article class="paper"><div class="num">04</div><div class="author">Василий Аксёнов</div><div class="title">Звёздный билет</div><p class="desc">Gap-year по-советски: друзья, Таллин, палатки, покер, стихи, любовь, ссоры, власть денег и взросление по часам. Повесть стала одним из текстов поколения шестидесятых.</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="daniel-stein"><article class="paper"><div class="num">05</div><div class="author">Людмила Улицкая</div><div class="title">Даниэль Штайн, переводчик</div><p class="desc">История польского еврея, ставшего католическим священником в Израиле. Письма, дневники и документы складываются в попытку примирить веру и сомнение, иудаизм и христианство, личную правду и религию.</p><span class="mark"></span></article></label>
+</div><div class="counter">выбрано: <span>0</span></div></section>
+
+<section class="form" data-group="small"><div class="formhead"><h2>Малая форма</h2><p>Здесь тоже можно отметить больше одного.</p></div><div class="cards">
+<label class="book"><input type="checkbox" data-book="officers-belt"><article class="paper"><div class="num">01</div><div class="author">Сергей Довлатов</div><div class="title">Офицерский ремень</div><p class="desc">Двум надзирателям поручено сопроводить спятившего зэка в психушку. В дороге роли неожиданно меняются, а самообладание оказывается редким ресурсом.</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="for-love-of-art"><article class="paper"><div class="num">02</div><div class="author">О. Генри</div><div class="title">Из любви к искусству</div><p class="desc">Джо и Дилия любят друг друга — и искусство. Он начинающий художник, она занимается музыкой. Что победит: любовь или желание стать лучшим?</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="captain-rybnikov"><article class="paper"><div class="num">03</div><div class="author">Александр Куприн</div><div class="title">Штабс-капитан Рыбников</div><p class="desc">История японского шпиона в Петербурге, замечательно подражающего внешности и образу мыслей среднего русского офицера.</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="repent-harlequin"><article class="paper"><div class="num">04</div><div class="author">Харлан Эллисон</div><div class="title">«Покайся, Арлекин!» — сказал Тиктакщик</div><p class="desc">Антиутопия, где время — валюта, а опоздание — преступление. Арлекин срывает расписания и бросает вызов системе, но Тиктакщик не прощает бунтарей.</p><span class="mark"></span></article></label>
+<label class="book"><input type="checkbox" data-book="life-and-collar"><article class="paper"><div class="num">05</div><div class="author">Надежда Тэффи</div><div class="title">Жизнь и воротник</div><p class="desc">Спокойной жизнью честной женщины завладевает купленный ею кружевной воротничок. Он толкает хозяйку на необдуманные поступки и разрушает её семейное счастье.</p><span class="mark"></span></article></label>
+</div><div class="counter">выбрано: <span>0</span></div></section>
+
+<section class="submitbox"><div><h3>Выбор сделан?</h3><p>Голос попадёт в общий результат клуба. Выбор можно изменить позже — новый вариант заменит предыдущий.</p><div class="done">Голос сохранён.</div><div data-who></div></div><button id="save" disabled>Сохранить мой выбор</button></section>
+<footer>Рисанкин Книжный Клуб · голосование</footer>
+
+<div id="identity-modal" class="identity-modal" onclick="if(event.target===this)closeIdentity()">
+ <div class="identity-card">
+  <button class="identity-close" onclick="closeIdentity()" aria-label="Закрыть">×</button>
+  <div class="identity-kicker">один раз на этом устройстве</div>
+  <h2>Как тебя зовут?</h2>
+  <p>Имя нужно, чтобы твой ответ можно было изменить, а не записывать заново.</p>
+  <label>Имя<input id="first-name" autocomplete="given-name"></label>
+  <label>Фамилия<input id="last-name" autocomplete="family-name"></label>
+  <div id="identity-error"></div>
+  <button class="identity-save" onclick="saveIdentity()">Продолжить</button>
+ </div>
+</div>
+
+</div>
+<script>
+const SB_URL='https://ucdbshgntaqtojsuzvqb.supabase.co';
+const SB_KEY='sb_publishable_4MG1e0_NkmBoFfV4o6-v4g_oAAeeDfv';
+const SB_HEADERS={"apikey":SB_KEY,"Authorization":"Bearer "+SB_KEY,"Content-Type":"application/json"};
+
+function esc(s){return String(s||"").trim().replace(/\s+/g," ");}
+function participantName(){return localStorage.getItem("rkk_participant_name")||"";}
+async function participantId(fullName){
+  const normalized=esc(fullName).toLocaleLowerCase("ru-RU");
+  const data=new TextEncoder().encode(normalized);
+  const hash=await crypto.subtle.digest("SHA-256",data);
+  return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+function openIdentity(after){
+  window._afterIdentity=after;
+  document.getElementById("identity-modal").classList.add("show");
+  const saved=participantName().split(" ");
+  document.getElementById("first-name").value=saved.shift()||"";
+  document.getElementById("last-name").value=saved.join(" ")||"";
+}
+function closeIdentity(){document.getElementById("identity-modal").classList.remove("show");}
+function saveIdentity(){
+  const f=esc(document.getElementById("first-name").value);
+  const l=esc(document.getElementById("last-name").value);
+  const err=document.getElementById("identity-error");
+  if(!f||!l){err.textContent="Нужны и имя, и фамилия.";return;}
+  localStorage.setItem("rkk_participant_name",f+" "+l);
+  err.textContent=""; closeIdentity();
+  const fn=window._afterIdentity; window._afterIdentity=null; if(fn) fn();
+  refreshWho();
+}
+function refreshWho(){
+  document.querySelectorAll("[data-who]").forEach(el=>{
+    const n=participantName();
+    el.innerHTML=n ? `Вы: <b>${n}</b> · <button type="button" class="who-change" onclick="openIdentity()">сменить участника</button>` : "";
+  });
+}
+
+const VOTING_ID="next-meeting-2026-10";
+const boxes=[...document.querySelectorAll('input[type=checkbox]')];
+const btn=document.querySelector('#save'), done=document.querySelector('.done');
+function update(){
+ document.querySelectorAll('.form').forEach(g=>g.querySelector('.counter span').textContent=g.querySelectorAll('input:checked').length);
+ btn.disabled=!boxes.some(x=>x.checked); done.style.display='none';
+}
+boxes.forEach(b=>b.addEventListener('change',update));
+
+async function loadMyVotes(){
+ refreshWho(); if(!participantName()){update();return;}
+ const pid=await participantId(participantName());
+ try{
+  const r=await fetch(`${SB_URL}/rest/v1/book_votes?participant_id=eq.${pid}&voting_id=eq.${VOTING_ID}&select=book_id`,{headers:SB_HEADERS});
+  if(!r.ok) throw new Error(await r.text());
+  const selected=new Set((await r.json()).map(x=>x.book_id));
+  boxes.forEach(b=>b.checked=selected.has(b.dataset.book)); update();
+ }catch(e){update();}
+}
+async function saveVotes(){
+ if(!participantName()){openIdentity(saveVotes);return;}
+ const pid=await participantId(participantName());
+ btn.disabled=true; btn.textContent="Сохраняю…";
+ try{
+  let r=await fetch(`${SB_URL}/rest/v1/book_votes?participant_id=eq.${pid}&voting_id=eq.${VOTING_ID}`,{method:"DELETE",headers:SB_HEADERS});
+  if(!r.ok) throw new Error(await r.text());
+  const rows=boxes.filter(b=>b.checked).map(b=>({
+   participant_id:pid,voting_id:VOTING_ID,
+   category:b.closest(".form").dataset.group,book_id:b.dataset.book
+  }));
+  if(rows.length){
+   r=await fetch(`${SB_URL}/rest/v1/book_votes`,{method:"POST",headers:SB_HEADERS,body:JSON.stringify(rows)});
+   if(!r.ok) throw new Error(await r.text());
+  }
+  done.textContent="Голос сохранён."; done.style.display="block";
+ }catch(e){done.textContent="Не удалось сохранить голос. Попробуй ещё раз.";done.style.display="block";}
+ btn.textContent="Сохранить мой выбор"; update(); done.style.display="block";
+}
+btn.addEventListener('click',saveVotes);
+document.addEventListener("DOMContentLoaded",loadMyVotes);
+</script></body></html>

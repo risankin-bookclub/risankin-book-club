@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Статистика — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f1e7d5;--ink:#171713;--red:#9f5145;--blue:#718795;--yellow:#c8a449;--green:#7d8970;--grey:#c7beb0}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1100px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{padding:58px 0 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:end}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(72px,12vw,132px);font-weight:400;line-height:.82;letter-spacing:-.075em;text-transform:uppercase;margin:24px 0 0;white-space:nowrap}
+.intro{font:18px/1.4 Georgia,serif;max-width:320px}
+.dashboard{border-top:1px solid var(--ink);padding:45px 0 78px}
+.topgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+.big{min-height:355px;background:var(--red);color:var(--paper);border:1px solid var(--ink);box-shadow:7px 8px 0 var(--ink);padding:25px;position:relative;transform:rotate(-.7deg)}
+.big .num{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(125px,20vw,220px);line-height:.75;letter-spacing:-.08em}
+.big .label{font:22px/1.2 Georgia,serif;max-width:300px;margin-top:25px}
+.big .scribble{position:absolute;right:18px;bottom:18px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;border:1px solid var(--paper);padding:7px 9px;transform:rotate(3deg)}
+.stack{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tile{border:1px solid var(--ink);padding:20px;min-height:165px;background:var(--blue);color:var(--paper);position:relative}
+.tile:nth-child(2){background:var(--yellow);color:var(--ink);transform:rotate(1deg)}
+.tile:nth-child(3){background:var(--grey);color:var(--ink);transform:rotate(-1deg)}
+.tile:nth-child(4){background:var(--green);color:var(--paper)}
+.tile .n{font-family:"Arial Narrow",Arial,sans-serif;font-size:61px;line-height:.9;letter-spacing:-.06em}
+.tile .t{font:14px/1.25 Georgia,serif;margin-top:12px}
+.section-title{font-family:"Arial Narrow",Arial,sans-serif;font-size:48px;line-height:.9;text-transform:uppercase;font-weight:400;letter-spacing:-.045em;margin:68px 0 25px}
+.scale{border:1px solid var(--ink);background:#ded3bd;padding:24px;box-shadow:5px 6px 0 var(--ink)}
+.row{display:grid;grid-template-columns:175px 1fr 45px;gap:14px;align-items:center;margin:13px 0}
+.name{font:14px/1.15 Georgia,serif}
+.track{height:17px;border:1px solid var(--ink);background:var(--paper)}
+.fill{height:100%;background:var(--ink)}
+.value{text-align:right;font-family:"Arial Narrow",Arial,sans-serif;font-size:18px}
+.club-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.note{border:1px solid var(--ink);padding:23px;min-height:190px;position:relative;background:#d5c8aa;box-shadow:4px 5px 0 var(--ink)}
+.note:nth-child(2){background:#b9c6ca;transform:rotate(-1deg)}
+.note:nth-child(3){background:#c99b8e;transform:rotate(1deg)}
+.note b{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:22px}
+.note strong{font:30px/1.05 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;font-weight:400}
+.note p{font:15px/1.35 Georgia,serif;margin:16px 0 0}
+.champion{margin-top:18px;border:1px solid var(--ink);display:grid;grid-template-columns:1fr 1fr}
+.champ{padding:25px}
+.champ:first-child{background:var(--yellow)}
+.champ:last-child{background:var(--red);color:var(--paper)}
+.champ small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:15px}
+.champ .score{font-family:"Arial Narrow",Arial,sans-serif;font-size:66px;line-height:.8;letter-spacing:-.06em}
+.champ h3{font:22px/1.1 Georgia,serif;margin:18px 0 5px}
+.champ p{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero{grid-template-columns:1fr;gap:28px;padding:44px 0}
+ h1{font-size:clamp(42px,13.3vw,58px);max-width:100%;white-space:nowrap}
+ .intro{max-width:100%}
+ .dashboard{padding-top:35px}
+ .topgrid{grid-template-columns:1fr;gap:22px}
+ .big{min-height:300px;width:calc(100% - 10px);margin-left:4px}
+ .big .num{font-size:145px}
+ .stack{grid-template-columns:1fr 1fr;gap:12px}
+ .tile{min-height:145px;padding:16px}
+ .tile .n{font-size:48px}
+ .section-title{font-size:38px;margin-top:58px}
+ .scale{padding:17px 14px}
+ .row{grid-template-columns:105px 1fr 36px;gap:9px}
+ .name{font-size:12px}
+ .club-grid{grid-template-columns:1fr;gap:18px}
+ .note{min-height:auto}
+ .champion{grid-template-columns:1fr}
+ footer{gap:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><span><a href="index.html">← на главную</a> · <a href="voting.html">голосование</a></span></nav>
+
+<header class="hero">
+ <div>
+  <div class="eyebrow">Рисанкин Книжный Клуб · всё посчитали</div>
+  <h1>Статистика</h1>
+ </div>
+ <div class="intro">Математика, которая наконец-то пригодилась: считаем книги, оценки и то, во что обычно превращается обсуждение.</div>
+</header>
+
+<main class="dashboard">
+ <section class="topgrid">
+  <div class="big">
+   <div class="num">14</div>
+   <div class="label">прочитанных произведений в архиве клуба</div>
+   <div class="scribble">и это только начало</div>
+  </div>
+  <div class="stack">
+   <div class="tile"><div class="n">7,6</div><div class="t">средняя оценка клуба</div></div>
+   <div class="tile"><div class="n">9</div><div class="t">самая высокая оценка</div></div>
+   <div class="tile"><div class="n">5,5</div><div class="t">самая низкая оценка</div></div>
+   <div class="tile"><div class="n">13</div><div class="t">разных авторов</div></div>
+  </div>
+ </section>
+
+ <h2 class="section-title">Как распределились оценки</h2>
+ <section class="scale">
+  <div class="row"><div class="name">8 и выше</div><div class="track"><div class="fill" style="width:43%"></div></div><div class="value">6</div></div>
+  <div class="row"><div class="name">от 7 до 7,9</div><div class="track"><div class="fill" style="width:21%"></div></div><div class="value">3</div></div>
+  <div class="row"><div class="name">от 6 до 6,9</div><div class="track"><div class="fill" style="width:29%"></div></div><div class="value">4</div></div>
+  <div class="row"><div class="name">ниже 6</div><div class="track"><div class="fill" style="width:7%"></div></div><div class="value">1</div></div>
+ </section>
+
+ <h2 class="section-title">Статистика, которую никто не просил</h2>
+ <section class="club-grid">
+  <div class="note">
+   <b>Неожиданно повторяющийся персонаж</b>
+   <strong>кошки</strong>
+   <p>Успели связать между собой произведения, которые вообще не собирались быть связанными.</p>
+  </div>
+  <div class="note">
+   <b>Любимый побочный эффект</b>
+   <strong>уйти далеко от книги</strong>
+   <p>Биография автора, история, кино, культурный контекст — и внезапно прошло два часа.</p>
+  </div>
+ </section>
+
+ <h2 class="section-title">Края рейтинга</h2>
+ <section class="champion">
+  <div class="champ">
+   <small>верхняя точка</small>
+   <div class="score">9/10</div>
+   <h3>«Отель „У погибшего альпиниста“»</h3>
+   <p>Братья Стругацкие</p>
+  </div>
+  <div class="champ">
+   <small>нижняя точка</small>
+   <div class="score">5,5/10</div>
+   <h3>«Доллар и двадцать центов»</h3>
+   <p>Чарльз Буковски</p>
+  </div>
+ </section>
+</main>
+
+<footer><span>Рисанкин Книжный Клуб</span><span>данные по 14 произведениям</span></footer>
+</div>
+</body>
+</html>

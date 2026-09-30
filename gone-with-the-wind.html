@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Унесённые ветром — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f3ead7;--ink:#171713;--ochre:#b99445;--faded:#d9c9a8;--red:#a64d3d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{min-height:560px;display:grid;grid-template-columns:1.15fr .85fr;gap:42px;padding:55px 0 70px;align-items:center;position:relative}
+.meta{position:relative;z-index:2}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(66px,10vw,126px);line-height:.78;letter-spacing:-.065em;text-transform:uppercase;font-weight:400;margin:18px 0 25px;max-width:700px}
+.author{font:23px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,150px);line-height:.82;letter-spacing:-.07em;margin-top:42px}
+.rating small{font-size:.21em;letter-spacing:.04em}
+.lost-sheet{height:420px;background:#e8ddc5;border:1px solid #8e826e;box-shadow:9px 10px 0 #191915;transform:rotate(2.2deg);position:relative;padding:30px}
+.lost-sheet:before,.lost-sheet:after{content:"";position:absolute;width:88px;height:24px;background:#c8b89199;top:-10px}
+.lost-sheet:before{left:28px;transform:rotate(-5deg)}.lost-sheet:after{right:34px;transform:rotate(6deg)}
+.sheet-no{font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.missing{position:absolute;inset:80px 30px 50px;border-top:1px solid #9f947f;border-bottom:1px solid #9f947f;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;font:24px/1.2 Georgia,serif}
+.pencil{position:absolute;right:22px;bottom:28px;max-width:72%;text-align:right;transform:rotate(-4deg);font:13px Georgia,serif}
+.archive{border-top:1px solid var(--ink);padding:55px 0 85px;display:grid;grid-template-columns:.7fr 1.3fr;gap:55px;align-items:start}
+.archive h2{font-family:"Arial Narrow",Arial,sans-serif;text-transform:uppercase;font-size:48px;line-height:.9;font-weight:400;letter-spacing:-.045em;margin:0}
+.memory{position:relative;border:1px solid var(--ink);background:#d9c29a;box-shadow:6px 7px 0 var(--ink);padding:48px 38px;transform:rotate(-1deg)}
+.memory:before{content:"УТЕРЯННАЯ ЗАПИСЬ";position:absolute;top:13px;left:18px;font-size:9px;letter-spacing:.18em}
+.memory p{font:30px/1.18 Georgia,serif;margin:0}
+.memory .stamp{margin-top:35px;font:11px Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;border:1px solid var(--red);color:var(--red);display:inline-block;padding:8px 10px;transform:rotate(3deg)}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .hero{grid-template-columns:1fr;min-height:0;gap:48px;padding:42px 0 58px}
+ h1{font-size:65px}
+ .rating{font-size:102px;margin-top:30px}
+ .lost-sheet{height:350px;width:88%;margin:auto}
+ .missing{font-size:20px}
+ .pencil{right:16px;bottom:20px;max-width:80%;font-size:12px}
+ .archive{grid-template-columns:1fr;gap:30px;padding:45px 0 65px}
+ .archive h2{font-size:41px}
+ .memory{padding:48px 25px 34px}
+ .memory p{font-size:25px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к полке</a></nav>
+<main>
+<section class="hero">
+ <div class="meta">
+  <div class="kicker">№ 2 в рейтинге клуба</div>
+  <h1>Унесённые<br>ветром</h1>
+  <div class="author">Маргарет Митчелл</div>
+  <div class="rating">8,8<small>/10</small></div>
+ </div>
+ <div class="lost-sheet">
+   <div class="sheet-no">архив · лист отсутствует</div>
+   <div class="missing">Здесь должна была быть рецензия.</div>
+   <div class="pencil">кажется, мы её не записали</div>
+ </div>
+</section>
+
+<section class="archive">
+ <h2>Что осталось<br>в архиве</h2>
+ <div class="memory">
+   <p>«Упс, рецензия останется только в памяти участников той встречи книжного клуба»</p>
+   <div class="stamp">восстановлению не подлежит</div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

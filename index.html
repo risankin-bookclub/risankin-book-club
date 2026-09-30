@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Рисанкин Книжный Клуб</title>
+<style>
+:root{
+  --paper:#f3ead7; --ink:#171713; --red:#c83b2e; --blue:#4267a9;
+  --green:#6f8b57; --yellow:#e8bd4d; --pink:#d69a9d; --wood:#8c5638;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;
+background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1180px;margin:auto;padding:24px}
+nav{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid #222;padding:8px 0 15px;font-size:12px;text-transform:uppercase;letter-spacing:.13em}
+nav .links{display:flex;gap:18px;flex-wrap:wrap} a{color:inherit;text-decoration:none}
+.hero{padding:54px 0 28px;position:relative}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-stretch:condensed;font-weight:300;text-transform:uppercase;
+font-size:clamp(58px,10vw,142px);line-height:.78;letter-spacing:-.065em;margin:0;max-width:1000px}
+.hero .scribble{font-family:Georgia,serif;font-style:italic;transform:rotate(-4deg);display:inline-block;margin:24px 0 0 54%;font-size:18px}
+.meeting{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:stretch;margin:32px 0 76px}
+.paper-card{border:1px solid #292923;padding:24px;background:#f7efdf;box-shadow:7px 8px 0 #1b1b17}
+.meeting h2,.section-title{font-family:"Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:-.04em;font-weight:400}
+.meeting h2{font-size:48px;margin:0 0 10px}.date{font-family:Georgia,serif;font-size:24px}
+.reads{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
+.book-now{min-height:245px;padding:18px;border:12px solid var(--red);background:#e7d6b5;position:relative}
+.book-now:nth-child(2){border-color:var(--blue);background:#d9dfd1}
+.tag{font-size:11px;text-transform:uppercase;letter-spacing:.15em}
+.book-now h3{font-family:Georgia,serif;font-weight:400;font-size:28px;margin:58px 0 8px}
+.book-now p{margin:0;font-size:13px}
+.rsvp{background:var(--yellow);padding:30px;display:flex;flex-direction:column;justify-content:center;transform:rotate(1deg)}
+.rsvp h3{font-family:Georgia,serif;font-size:38px;font-weight:400;margin:0 0 18px}
+.buttons{display:flex;gap:10px}.btn{border:1px solid #111;background:transparent;padding:13px 20px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.btn.active,.btn:hover{background:#111;color:var(--paper)} #rsvp-note{margin-top:16px;min-height:22px;font-family:Georgia,serif;font-style:italic}
+section{margin:76px 0}.section-title{font-size:62px;margin:0 0 26px}
+.shelf{border-bottom:18px solid var(--wood);padding:0 18px 8px;display:flex;align-items:flex-end;gap:7px;min-height:230px;overflow:hidden}
+.spine{writing-mode:vertical-rl;transform:rotate(180deg);display:flex;justify-content:center;align-items:center;text-align:center;
+padding:10px 6px;border:1px solid #28251f;font-family:Georgia,serif;font-size:13px;cursor:pointer;transition:.2s}
+.spine:hover{transform:rotate(180deg) translateY(8px)}
+.spine small{font-family:Arial,sans-serif;margin-top:10px;font-size:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{min-height:180px;border:1px solid #222;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.stat:nth-child(1){background:#d7a1a2;transform:rotate(-1deg)}.stat:nth-child(2){background:#d9cfad}.stat:nth-child(3){background:#8ba277;transform:rotate(1deg)}
+.num{font-family:Georgia,serif;font-size:70px}.stat span:last-child{text-transform:uppercase;font-size:12px;letter-spacing:.12em}
+.vote{background:#e3bd4f;padding:28px;border:1px solid #222}.vote-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.vote h3{font-family:Georgia,serif;font-weight:400;font-size:27px}.choice{display:block;border-top:1px solid #222;padding:12px 2px;font-size:15px}
+.choice input{margin-right:10px;accent-color:#111}.submit{margin-top:25px;background:#111;color:#fff;border:0;padding:15px 25px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}
+#vote-note{margin-left:12px;font-family:Georgia,serif;font-style:italic}
+footer{border-top:1px solid #222;padding:25px 0 45px;display:flex;justify-content:space-between;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+@media(max-width:760px){.wrap{padding:16px}.meeting,.reads,.vote-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.section-title{font-size:45px}.meeting h2{font-size:38px}.hero .scribble{margin-left:30%}nav{align-items:flex-start;flex-direction:column}.shelf{min-height:190px}.spine{font-size:11px}}
+
+.cover-art{height:118px;margin:14px -2px 8px;border:1px solid #222;display:flex;align-items:center;justify-content:center;
+background:repeating-linear-gradient(-8deg,#0000 0 10px,#0000000b 11px 12px);transform:rotate(-1.2deg)}
+.cover-art span{font:italic 12px Georgia,serif}.art2{transform:rotate(1.5deg);background-color:#c9d4c5}
+.book-now:nth-child(1){transform:rotate(-.7deg)}.book-now:nth-child(2){transform:rotate(1deg)}
+.paper-card{transform:rotate(.25deg)} .section-title{transform:rotate(-.6deg);display:inline-block}
+.shelf{transform:rotate(.15deg)} .spine:nth-child(2n){margin-bottom:2px}.spine:nth-child(3n){transform:rotate(178.8deg)}
+.vote{transform:rotate(-.25deg)}
+.modal{display:none;position:fixed;inset:0;background:#171713cc;z-index:20;padding:5vw;align-items:center;justify-content:center}
+.modal.show{display:flex}.book-page{position:relative;background:#f3ead7;max-width:900px;width:100%;padding:45px;
+display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #000}
+.close{position:absolute;right:15px;top:10px;border:0;background:none;font-size:34px;cursor:pointer}
+.frame-art{padding:18px;background:#b94636;border:12px solid #6c442e;transform:rotate(-2deg)}
+.fake-cover{min-height:330px;background:#ddd0ad;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:34px}
+.book-page h2{font:400 48px Georgia,serif;margin:12px 0}.review{font:18px/1.5 Georgia,serif}.big-rating{font:60px Georgia,serif;margin-top:20px}
+@media(max-width:760px){.book-page{grid-template-columns:1fr;padding:28px;overflow:auto;max-height:90vh}.fake-cover{min-height:220px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><div class="links"><a href="#now">Сейчас читаем</a><a href="#read">Мы прочитали</a><a href="#stats">Статистика</a><a href="#vote">Голосование</a></div></nav>
+
+<header class="hero">
+<h1>Рисанкин<br>Книжный Клуб</h1>
+<div class="scribble">✶ № 01 · книжный архив</div>
+</header>
+
+<section class="meeting" id="now">
+<div class="paper-card">
+<div class="tag">Следующая встреча</div>
+<h2>17 октября · 19:00</h2>
+<div class="date">17 октября · собираемся здесь снова</div>
+<div class="reads">
+<div class="book-now"><span class="tag">Крупная форма</span>
+<div class="cover-art art1"><span>сюда — обложка / картинка</span></div>
+<h3>Название книги</h3><p>Автор · текущая книга</p></div>
+<div class="book-now"><span class="tag">Малая форма</span>
+<div class="cover-art art2"><span>сюда — обложка / картинка</span></div>
+<h3>Название рассказа</h3><p>Автор · малая форма</p></div>
+</div>
+</div>
+<div class="rsvp"><div class="tag">RSVP</div><h3>Ты будешь?</h3><div class="buttons"><button class="btn" onclick="rsvp(this,'Буду!')">Буду</button><button class="btn" onclick="rsvp(this,'Не буду')">Не буду</button></div><div id="rsvp-note"></div></div>
+</section>
+
+<section id="read">
+<h2 class="section-title">Мы прочитали</h2>
+<div class="shelf">
+<div class="spine" onclick="openBook(this)" style="height:205px;background:#bb5b43">Унесённые ветром <small>8,8</small></div>
+<div class="spine" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" onclick="openBook(this)" style="height:175px;background:#6e88a6">Все лето в один день <small>6,6</small></div>
+<div class="spine" style="height:215px;background:#c6b66c">Если все кошки в мире исчезнут <small>7,5</small></div>
+<div class="spine" style="height:188px;background:#79966d">Доллар и двадцать центов <small>5,5</small></div>
+<div class="spine" style="height:198px;background:#d39b91">Пикник на обочине <small>—</small></div>
+<div class="spine" style="height:220px;background:#657aa0">Над кукушкиным гнездом <small>—</small></div>
+<div class="spine" style="height:180px;background:#b87c4e">451° по Фаренгейту <small>—</small></div>
+<div class="spine" style="height:210px;background:#8a795e">Скотный двор <small>—</small></div>
+</div>
+</section>
+
+<section id="stats">
+<h2 class="section-title">Статистика</h2>
+<div class="stats"><div class="stat"><span class="num">24</span><span>прочитано произведений</span></div><div class="stat"><span class="num">7,6</span><span>средняя оценка</span></div><div class="stat"><span class="num">∞</span><span>разговоров после последней страницы</span></div></div>
+</section>
+
+<section id="vote">
+<h2 class="section-title">А что дальше?</h2>
+<div class="vote">
+<div class="tag">Можно выбрать несколько</div>
+<div class="vote-grid">
+<div><h3>Крупная форма</h3><label class="choice"><input type="checkbox"> Кандидат №1</label><label class="choice"><input type="checkbox"> Кандидат №2</label><label class="choice"><input type="checkbox"> Кандидат №3</label><label class="choice"><input type="checkbox"> Кандидат №4</label></div>
+<div><h3>Малая форма</h3><label class="choice"><input type="checkbox"> Кандидат №1</label><label class="choice"><input type="checkbox"> Кандидат №2</label><label class="choice"><input type="checkbox"> Кандидат №3</label><label class="choice"><input type="checkbox"> Кандидат №4</label></div>
+</div>
+<button class="submit" onclick="vote()">Проголосовать</button><span id="vote-note"></span>
+</div>
+</section>
+<div id="book-modal" class="modal" onclick="if(event.target===this)closeBook()">
+<div class="book-page">
+<button class="close" onclick="closeBook()">×</button>
+<div class="frame-art"><div class="fake-cover">КНИГА</div></div>
+<div><div class="tag">Из нашей библиотеки</div><h2 id="modal-title">Название</h2>
+<p class="review">Здесь будет страница книги: рейтинг клуба, автор, ваша рецензия и детали. Обложка — в отдельной неровной рамке.</p>
+<div class="big-rating" id="modal-rating"></div></div>
+</div></div><footer><span>Рисанкин Книжный Клуб</span><span>архив клуба</span></footer>
+</div>
+<script>
+function rsvp(el,msg){document.querySelectorAll('.rsvp .btn').forEach(x=>x.classList.remove('active'));el.classList.add('active');document.getElementById('rsvp-note').textContent=msg+' — ответ сохранён в этом прототипе.'}
+function vote(){let n=document.querySelectorAll('#vote input:checked').length;document.getElementById('vote-note').textContent=n?`Отмечено: ${n}. В прототипе всё работает локально.`:'Сначала отметь хотя бы один вариант.'}
+
+function openBook(el){
+ let raw=el.innerText.trim().split("\n");
+ document.getElementById("modal-title").textContent=raw[0]||"Книга";
+ document.getElementById("modal-rating").textContent=raw[1] ? "★ "+raw[1] : "";
+ document.getElementById("book-modal").classList.add("show");
+}
+function closeBook(){document.getElementById("book-modal").classList.remove("show")}
+</script>
+</body></html>

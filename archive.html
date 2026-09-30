@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мы прочитали — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f1e7d5;--ink:#171713;--red:#9f5145;--blue:#718795;--yellow:#c8a449;--green:#7d8970;--grey:#c5bdaf}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1120px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none} .back{border-bottom:1px solid var(--ink)}
+.hero{padding:60px 0 52px;display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:end}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(88px,15vw,168px);font-weight:400;line-height:.72;letter-spacing:-.075em;text-transform:uppercase;margin:24px 0 0}
+.intro{font:18px/1.4 Georgia,serif;max-width:290px}
+.stats{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.tag{border:1px solid var(--ink);padding:7px 9px;font-size:9px;text-transform:uppercase;letter-spacing:.11em;background:#ded3bd}
+.archive{border-top:1px solid var(--ink);padding:45px 0 80px}
+.shelf-label{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:24px}
+.shelf-label h2{font-family:"Arial Narrow",Arial,sans-serif;font-size:43px;line-height:.9;text-transform:uppercase;font-weight:400;letter-spacing:-.04em;margin:0}
+.shelf-label span{font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 17px}
+.book{display:block;min-width:0}
+.spine{height:320px;border:1px solid var(--ink);box-shadow:5px 6px 0 var(--ink);padding:17px;position:relative;display:flex;flex-direction:column;transition:transform .15s ease}
+.book:hover .spine{transform:translateY(-5px) rotate(-.5deg)}
+.rank{font-size:9px;letter-spacing:.14em}
+.title{font-family:"Arial Narrow",Arial,sans-serif;font-size:30px;line-height:.93;letter-spacing:-.045em;text-transform:uppercase;margin-top:auto;overflow-wrap:normal;word-break:normal;hyphens:none}
+.author{font:13px/1.25 Georgia,serif;margin-top:12px;max-width:85%}
+.score{position:absolute;right:14px;top:14px;font-family:"Arial Narrow",Arial,sans-serif;font-size:28px;letter-spacing:-.04em}
+.score small{font-size:.38em;display:inline-block;margin-left:.08em;letter-spacing:0}
+.hotel .spine{background:var(--red);color:#f4ead9;height:350px;transform:rotate(-1deg)}
+.wind .spine{background:#cbbd9e;height:306px;margin-top:44px}
+.prince .spine{background:#6f7f68;color:#f4ead9;height:336px;margin-top:14px;transform:rotate(1deg)}
+.reader .spine{background:#9aaab1;height:315px;margin-top:35px}
+.fight .spine{background:#c58c91;height:345px;transform:rotate(-.7deg)}
+.vanya .spine{background:#d1c4aa;height:310px;margin-top:35px}
+.barn .spine{background:#a65b45;color:#f4ead9;height:330px;margin-top:15px;transform:rotate(.8deg)}
+.cats .spine{background:#758d9a;color:#f4ead9;height:355px}
+.yellow .spine{background:#d0ad45;height:325px;margin-top:30px;transform:rotate(-.8deg)}
+.shiva .spine{background:#a65742;color:#f4ead9;height:345px;margin-top:10px}
+.busy .spine{background:#687f8d;color:#f4ead9;height:312px;margin-top:43px;transform:rotate(.7deg)}
+.necro .spine{background:#80748d;color:#f4ead9;height:337px;margin-top:18px}
+.summer .spine{background:#bdc4c4;height:350px;transform:rotate(-.7deg)}
+.dollar .spine{background:#c6b487;height:316px;margin-top:34px}
+.shelf{height:18px;background:var(--ink);margin:8px -5px 0;box-shadow:0 7px 0 #9e7955}
+.note{margin:42px auto 0;max-width:590px;border:1px solid var(--ink);background:#ded3bd;padding:22px 25px;transform:rotate(-.6deg);font:18px/1.35 Georgia,serif;box-shadow:4px 5px 0 var(--ink)}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:800px){
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero{grid-template-columns:1fr;gap:30px;padding:45px 0}
+ h1{font-size:clamp(52px,16.2vw,70px);letter-spacing:-.065em;max-width:calc(100% - 18px);margin-right:18px}
+ .intro{max-width:100%}
+ .archive{padding-top:36px}
+ .shelf-label{align-items:start;flex-direction:column;gap:8px}
+ .shelf-label h2{font-size:38px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 12px;align-items:end}
+ .spine,.hotel .spine,.wind .spine,.prince .spine,.reader .spine,.fight .spine,.vanya .spine,.barn .spine,.cats .spine,.yellow .spine,.shiva .spine,.busy .spine,.necro .spine,.summer .spine,.dollar .spine{height:245px;margin-top:0}
+ .book:nth-child(4n+2) .spine{height:220px;margin-top:25px}
+ .book:nth-child(4n+3) .spine{height:232px;margin-top:13px}
+ .title{font-size:clamp(18px,5.6vw,24px);line-height:.98}.hotel .title,.cats .title,.dollar .title{font-size:clamp(16px,4.9vw,21px);letter-spacing:-.03em}
+ .author{font-size:11px}
+ .score{font-size:23px}
+ .shelf{margin-top:7px;height:14px}
+ footer{gap:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html">← на главную</a></nav>
+
+<header class="hero">
+ <div>
+  <div class="eyebrow">Рисанкин Книжный Клуб · архив</div>
+  <h1>Мы<br>прочитали</h1>
+ </div>
+ <div class="intro">
+  Здесь лежит всё, до чего мы уже добрались — от 9/10 до 5,5/10.
+  <div class="stats"><span class="tag">14 книг</span><span class="tag">средняя оценка 7,6</span></div>
+ </div>
+</header>
+
+<main class="archive">
+ <div class="shelf-label">
+   <h2>Полка № 1</h2>
+   <span>по убыванию оценки</span>
+ </div>
+ <div class="grid">
+   <a class="book hotel" href="hotel.html">
+      <div class="spine">
+        <span class="rank">01</span>
+        <div class="title">Отель «У погибшего альпиниста»</div>
+        <div class="author">Братья Стругацкие</div>
+        <div class="score">9<small>/10</small></div>
+      </div>
+    </a>
+<a class="book wind" href="gone-with-the-wind.html">
+      <div class="spine">
+        <span class="rank">02</span>
+        <div class="title">Унесённые ветром</div>
+        <div class="author">Маргарет Митчелл</div>
+        <div class="score">8,8<small>/10</small></div>
+      </div>
+    </a>
+<a class="book prince" href="poor-prince.html">
+      <div class="spine">
+        <span class="rank">03</span>
+        <div class="title">Бедный принц</div>
+        <div class="author">Александр Куприн</div>
+        <div class="score">8,3<small>/10</small></div>
+      </div>
+    </a>
+<a class="book reader" href="reader.html">
+      <div class="spine">
+        <span class="rank">04</span>
+        <div class="title">Чтец</div>
+        <div class="author">Бернхард Шлинк</div>
+        <div class="score">8,2<small>/10</small></div>
+      </div>
+    </a>
+<a class="book fight" href="fight-club.html">
+      <div class="spine">
+        <span class="rank">05</span>
+        <div class="title">Бойцовский клуб</div>
+        <div class="author">Чак Паланик</div>
+        <div class="score">8<small>/10</small></div>
+      </div>
+    </a>
+<a class="book vanya" href="uncle-vanya.html">
+      <div class="spine">
+        <span class="rank">06</span>
+        <div class="title">Дядя Ваня</div>
+        <div class="author">А. П. Чехов</div>
+        <div class="score">8<small>/10</small></div>
+      </div>
+    </a>
+<a class="book barn" href="burn-the-barn.html">
+      <div class="spine">
+        <span class="rank">07</span>
+        <div class="title">Сжечь сарай</div>
+        <div class="author">Харуки Мураками</div>
+        <div class="score">7,5<small>/10</small></div>
+      </div>
+    </a>
+<a class="book cats" href="if-cats-disappeared.html">
+      <div class="spine">
+        <span class="rank">08</span>
+        <div class="title">Если все кошки в мире исчезнут</div>
+        <div class="author">Гэнки Кавамура</div>
+        <div class="score">7,5<small>/10</small></div>
+      </div>
+    </a>
+<a class="book yellow" href="yellowface.html">
+      <div class="spine">
+        <span class="rank">09</span>
+        <div class="title">Йеллоуфейс</div>
+        <div class="author">Ребекка Куанг</div>
+        <div class="score">7,4<small>/10</small></div>
+      </div>
+    </a>
+<a class="book shiva" href="dancing-shiva.html">
+      <div class="spine">
+        <span class="rank">10</span>
+        <div class="title">Танцующий Шива</div>
+        <div class="author">Василий Шукшин</div>
+        <div class="score">6,8<small>/10</small></div>
+      </div>
+    </a>
+<a class="book busy" href="busy-man.html">
+      <div class="spine">
+        <span class="rank">11</span>
+        <div class="title">Занятой человек</div>
+        <div class="author">Владимир Набоков</div>
+        <div class="score">6,8<small>/10</small></div>
+      </div>
+    </a>
+<a class="book necro" href="necroment.html">
+      <div class="spine">
+        <span class="rank">12</span>
+        <div class="title">Некромент</div>
+        <div class="author">Виктор Пелевин</div>
+        <div class="score">6,6<small>/10</small></div>
+      </div>
+    </a>
+<a class="book summer" href="all-summer-in-a-day.html">
+      <div class="spine">
+        <span class="rank">13</span>
+        <div class="title">Всё лето в один день</div>
+        <div class="author">Рэй Брэдбери</div>
+        <div class="score">6,6<small>/10</small></div>
+      </div>
+    </a>
+<a class="book dollar" href="dollar-and-twenty-cents.html">
+      <div class="spine">
+        <span class="rank">14</span>
+        <div class="title">Доллар и двадцать центов</div>
+        <div class="author">Чарльз Буковски</div>
+        <div class="score">5,5<small>/10</small></div>
+      </div>
+    </a>
+ </div>
+ <div class="shelf"></div>
+ <div class="note">Нажми на любую книгу — у каждой внутри своя отдельная страница и собственный маленький визуальный мир.</div>
+</main>
+
+<footer><span>Рисанкин Книжный Клуб</span><span>14 прочитанных книг</span></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Танцующий Шива — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f2e8d5;--ink:#171713;--brick:#a65742;--blue:#718995;--mustard:#c2a14f;--green:#7d8970}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:52px;padding:58px 0 72px;align-items:center}
+.poster{height:440px;background:var(--brick);border:1px solid var(--ink);box-shadow:9px 10px 0 var(--ink);transform:rotate(-1.5deg);position:relative;overflow:hidden}
+.ring{position:absolute;border:2px solid var(--paper);border-radius:50%;width:225px;height:225px;left:50%;top:50%;transform:translate(-50%,-50%)}
+.figure{position:absolute;left:50%;top:50%;width:92px;height:170px;transform:translate(-50%,-47%)}
+.head{position:absolute;width:38px;height:38px;border:2px solid var(--paper);border-radius:50%;left:27px;top:0}
+.body{position:absolute;height:78px;border-left:2px solid var(--paper);left:46px;top:37px}
+.arm,.leg{position:absolute;height:2px;background:var(--paper);transform-origin:left center}
+.a1{width:72px;left:46px;top:55px;transform:rotate(-28deg)}.a2{width:72px;left:46px;top:58px;transform:rotate(205deg)}
+.a3{width:61px;left:46px;top:76px;transform:rotate(23deg)}.a4{width:61px;left:46px;top:78px;transform:rotate(157deg)}
+.l1{width:76px;left:46px;top:113px;transform:rotate(55deg)}.l2{width:76px;left:46px;top:113px;transform:rotate(125deg)}
+.poster-label{position:absolute;left:17px;top:17px;color:var(--paper);font-size:10px;text-transform:uppercase;letter-spacing:.15em}
+.poster-bottom{position:absolute;right:18px;bottom:17px;color:var(--paper);font:13px Georgia,serif;transform:rotate(-3deg)}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{position:relative;left:-14px;font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(70px,11vw,128px);line-height:.77;letter-spacing:-.065em;text-transform:uppercase;font-weight:400;margin:22px 0 25px}
+.author{font:22px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,145px);line-height:.82;letter-spacing:-.07em;margin-top:38px}
+.rating small{font-size:.21em;display:inline-block;letter-spacing:.02em;margin-left:.16em;white-space:nowrap}
+.review-zone{border-top:1px solid var(--ink);padding:52px 0 78px}
+.review-zone h2{font-family:"Arial Narrow",Arial,sans-serif;font-size:50px;line-height:.9;text-transform:uppercase;font-weight:400;letter-spacing:-.045em;margin:0 0 40px}
+.review{columns:2;column-gap:52px;font:18px/1.55 Georgia,serif}
+.review p{break-inside:avoid;margin:0 0 1.3em}
+.pull{break-inside:avoid;background:var(--mustard);border:1px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:23px;margin:10px 0 30px;transform:rotate(1deg);font-family:"Arial Narrow",Arial,sans-serif;font-size:28px;line-height:1.05;text-transform:uppercase}
+.context{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:45px}
+.card{border:1px solid var(--ink);padding:18px;min-height:135px;background:#c9c2b5;font:16px/1.28 Georgia,serif}
+.card:nth-child(2){background:#bdc9ce;transform:rotate(-1deg)}
+.card:nth-child(3){background:#c8cfb9;transform:rotate(1deg)}
+.card b{display:block;font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero{grid-template-columns:1fr;gap:48px;padding:42px 0 58px}
+ .hero>*{min-width:0;max-width:100%}
+ .poster{height:350px;width:calc(100% - 12px);margin:0 6px;box-shadow:6px 7px 0 var(--ink)}
+ .ring{width:190px;height:190px}
+ h1{font-size:clamp(55px,17vw,70px);left:-6px}
+ .rating{font-size:100px;margin-top:30px}
+ .review-zone h2{font-size:39px}
+ .review{columns:1;font-size:17px}
+ .pull{font-size:24px}
+ .context{grid-template-columns:1fr;gap:18px}
+ footer{gap:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к архиву</a></nav>
+<main>
+<section class="hero">
+ <div class="poster">
+   <div class="poster-label">три страницы · тем гораздо больше</div>
+   <div class="ring"></div>
+   <div class="figure">
+    <i class="head"></i><i class="body"></i>
+    <i class="arm a1"></i><i class="arm a2"></i><i class="arm a3"></i><i class="arm a4"></i>
+    <i class="leg l1"></i><i class="leg l2"></i>
+   </div>
+   <div class="poster-bottom">читать вместе с контекстом</div>
+ </div>
+ <div>
+  <div class="kicker">№ 10 в рейтинге клуба</div>
+  <h1>Танцующий<br>Шива</h1>
+  <div class="author">Василий Шукшин</div>
+  <div class="rating">6,8<small>/10</small></div>
+ </div>
+</section>
+
+<section class="review-zone">
+ <h2>Три страницы. Тем — столько же.</h2>
+ <div class="review">
+   <p>Эта оценка тоже могла бы быть выше. Начнём с того, что короткие рассказы — сложный жанр: они либо вызывают много вопросов, либо не заходят совсем.</p>
+   <div class="pull">Как подметил один из участников: «Три страницы, а тем — столько же, сколько в крупной форме».</div>
+   <p>Здесь и единство людей, горящих общим делом, и талант простого человека, и культурный код.</p>
+   <p>Некоторым было сложно поверить в историю — возник диссонанс между образом писателя и выбранной темой. Это привело к обсуждению: насколько автор влияет на восприятие произведения и что вообще нужно учитывать при чтении.</p>
+   <p>К самому автору привязываться не стоит, а вот его бэкграунд — полезно.</p>
+   <p>Обсуждали многое: и религию, и аристократию, и историю.</p>
+   <p>В итоге пришли к мысли, что это рассказ, который можно перечитывать годами. Каждый раз воспринимать его иначе — просто потому, что меняется собственный уровень кругозора.</p>
+ </div>
+
+ <div class="context">
+  <div class="card"><b>Внутри трёх страниц</b>Общее дело, талант простого человека и культурный код.</div>
+  <div class="card"><b>Что пришлось учитывать</b>Бэкграунд автора — не как ответ, а как полезный контекст.</div>
+  <div class="card"><b>Почему перечитывать</b>Рассказ меняется вместе с собственным кругозором.</div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

@@ -465,6 +465,59 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
  .pb2:after{bottom:11px;font-size:6px}
 }
 
+
+/* FINAL MOBILE SHELF TYPE FIX — stable on iPhone */
+.pbook{overflow:hidden!important}
+.pbook .title{
+  writing-mode:horizontal-tb!important;
+  transform:rotate(-90deg)!important;
+  translate:none!important;
+  position:absolute!important;
+  left:50%!important;
+  right:auto!important;
+  top:50%!important;
+  bottom:auto!important;
+  width:max-content!important;
+  max-width:none!important;
+  height:auto!important;
+  max-height:none!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  transform-origin:center center!important;
+  font-style:normal!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+}
+.pb1 .title{font:500 9px/1 Arial,sans-serif!important}
+.pb2 .title{font:400 13px/1 Georgia,"Times New Roman",serif!important}
+.pb3 .title{font:700 10px/1 Arial,sans-serif!important}
+.pb4 .title{
+  transform:translate(-50%,-50%)!important;
+  width:auto!important;
+  font:700 11px/1 Arial,sans-serif!important;
+  letter-spacing:.08em!important;
+  padding:5px!important;
+}
+.pb5 .title{font:600 14px/1 Arial,sans-serif!important}
+.pb6 .title{font:400 12px/1 Georgia,"Times New Roman",serif!important}
+.pb7 .title{font:700 12px/1 Arial,sans-serif!important}
+.pb8 .title{font:400 8.5px/1 Georgia,"Times New Roman",serif!important}
+
+.pb1 .title,.pb2 .title,.pb3 .title,.pb5 .title,.pb6 .title,.pb7 .title,.pb8 .title{
+  transform:translate(-50%,-50%) rotate(-90deg)!important;
+}
+
+@media(max-width:700px){
+ .pb1 .title{font-size:7px!important}
+ .pb2 .title{font-size:10px!important}
+ .pb3 .title{font-size:7.5px!important}
+ .pb4 .title{font-size:8px!important}
+ .pb5 .title{font-size:10.5px!important}
+ .pb6 .title{font-size:9px!important}
+ .pb7 .title{font-size:9px!important}
+ .pb8 .title{font-size:6.4px!important}
+}
+
 </style>
 </head>
 <body>
@@ -517,17 +570,17 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
   <div class="physical-books">
     <a class="pbook pb1" href="hotel.html"><span class="title">Отель «У погибшего альпиниста»</span><span class="author">Стругацкие</span></a>
     <a class="pbook pb2" href="gone-with-the-wind.html"><span class="title">Унесённые ветром</span><span class="author">М. Митчелл</span></a>
-    <button class="pbook pb3" onclick="openBook(this)"><span class="title">Бедный принц</span><span class="author">А. Куприн</span></button>
-    <button class="pbook pb4" onclick="openBook(this)"><span class="title">ЧТЕЦ</span><span class="author">Б. Шлинк</span></button>
-    <button class="pbook pb5" onclick="openBook(this)"><span class="title">Бойцовский клуб</span><span class="author">Чак Паланик</span></button>
-    <button class="pbook pb6" onclick="openBook(this)"><span class="title">Дядя Ваня</span><span class="author">А. П. Чехов</span></button>
-    <button class="pbook pb7" onclick="openBook(this)"><span class="title">Сжечь сарай</span><span class="author">Х. Мураками</span></button>
-    <button class="pbook pb8" onclick="openBook(this)"><span class="title">Если все кошки в мире исчезнут</span><span class="author">Г. Кавамура</span></button>
+    <a class="pbook pb3" href="poor-prince.html"><span class="title">Бедный принц</span><span class="author">А. Куприн</span></a>
+    <a class="pbook pb4" href="reader.html"><span class="title">ЧТЕЦ</span><span class="author">Б. Шлинк</span></a>
+    <a class="pbook pb5" href="fight-club.html"><span class="title">Бойцовский клуб</span><span class="author">Чак Паланик</span></a>
+    <a class="pbook pb6" href="uncle-vanya.html"><span class="title">Дядя Ваня</span><span class="author">А. П. Чехов</span></a>
+    <a class="pbook pb7" href="burn-the-barn.html"><span class="title">Сжечь сарай</span><span class="author">Х. Мураками</span></a>
+    <a class="pbook pb8" href="if-cats-disappeared.html"><span class="title">Если все кошки в мире исчезнут</span><span class="author">Г. Кавамура</span></a>
   </div>
   <div class="shelf-board"></div>
 </div>
 
-<a class="archive-more" href="#read">Открыть остальной архив →</a>
+<a class="archive-more" href="archive.html">Открыть остальной архив</a>
 </section>
 
 <section id="stats">

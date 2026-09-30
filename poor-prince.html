@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Бедный принц — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f3ead7;--ink:#171713;--green:#66755d;--red:#9e4c3d;--gold:#c19b52;--cream:#e8dcc0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;padding:58px 0 72px;align-items:center}
+.card{width:78%;aspect-ratio:.7;margin:auto;background:var(--green);border:1px solid var(--ink);box-shadow:9px 10px 0 var(--ink);transform:rotate(-2deg);padding:18px;position:relative}
+.card-inner{height:100%;border:1px solid #e7d8b7;display:flex;flex-direction:column;justify-content:space-between;text-align:center;padding:28px 14px;color:#f2e7cd}
+.star{font-size:30px}.card-title{font:31px/.95 Georgia,serif}.card-author{font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+.tape{position:absolute;width:88px;height:25px;background:#d8c69caa;top:-12px;left:50%;transform:translateX(-50%) rotate(3deg)}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(70px,10vw,120px);line-height:.8;letter-spacing:-.065em;text-transform:uppercase;font-weight:400;margin:18px 0 22px}
+.author{font:22px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,145px);line-height:.82;letter-spacing:-.07em;margin-top:38px}.rating small{font-size:.21em}
+.review-zone{border-top:1px solid var(--ink);padding:52px 0 75px;display:grid;grid-template-columns:.65fr 1.35fr;gap:55px}
+.side h2{font-family:"Arial Narrow",Arial,sans-serif;text-transform:uppercase;font-size:47px;line-height:.9;font-weight:400;letter-spacing:-.045em;margin:0 0 28px}
+.side-note{background:var(--red);color:#f5ead6;border:1px solid var(--ink);padding:20px;box-shadow:5px 6px 0 var(--ink);transform:rotate(-2deg);font:18px/1.2 Georgia,serif}
+.review{font:22px/1.55 Georgia,serif}
+.review p{margin:0 0 1.35em}
+.quote{margin:38px 0 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:25px 0;font-family:"Arial Narrow",Arial,sans-serif;font-size:34px;line-height:1;text-transform:uppercase;letter-spacing:-.025em}
+.doodles{display:flex;justify-content:space-between;margin-top:40px;font:12px Georgia,serif}
+.doodles span{border:1px solid var(--ink);padding:9px 12px;transform:rotate(2deg)}
+.doodles span:last-child{transform:rotate(-2deg);background:#d9c99f}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .hero{grid-template-columns:1fr;gap:48px;padding:42px 0 58px}
+ .card{width:64%;max-width:250px}
+ h1{font-size:68px}
+ .rating{font-size:102px;margin-top:30px}
+ .review-zone{grid-template-columns:1fr;gap:32px;padding:45px 0 65px}
+ .side h2{font-size:40px}
+ .review{font-size:18px}
+ .quote{font-size:28px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к полке</a></nav>
+<main>
+<section class="hero">
+ <div class="card">
+   <div class="tape"></div>
+   <div class="card-inner">
+    <div class="star">✦</div>
+    <div class="card-title">Бедный<br>принц</div>
+    <div class="card-author">Александр Куприн</div>
+   </div>
+ </div>
+ <div>
+  <div class="kicker">№ 3 в рейтинге клуба</div>
+  <h1>Бедный<br>принц</h1>
+  <div class="author">Александр Куприн</div>
+  <div class="rating">8,3<small>/10</small></div>
+ </div>
+</section>
+
+<section class="review-zone">
+ <div class="side">
+  <h2>После<br>прочтения</h2>
+  <div class="side-note">Очень ярко рисуется в воображении.</div>
+ </div>
+ <div class="review">
+   <p>История, которая сильно возвращает в детство и очень ярко рисуется в воображении.</p>
+   <p>В своё время такие тексты действительно нужно было писать.</p>
+   <div class="quote">Тёплый, удивительный рассказ.</div>
+   <p>Тот самый текст, который хочется читать детям в канун Рождества.</p>
+   <div class="doodles"><span>детство</span><span>канун Рождества · читать вслух</span></div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

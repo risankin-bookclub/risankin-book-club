@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Дядя Ваня — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f3ead7;--ink:#171713;--brown:#8d684d;--green:#7b876c;--blue:#8295a1;--cream:#e7d9bc}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;padding:58px 0 72px;align-items:center}
+.playbill{width:80%;min-height:430px;margin:auto;background:#ded0b2;border:1px solid var(--ink);box-shadow:9px 10px 0 var(--ink);transform:rotate(-1.7deg);padding:24px;position:relative}
+.playbill:before{content:"";position:absolute;inset:12px;border:1px solid var(--ink);pointer-events:none}
+.playbill-inner{position:relative;z-index:1;text-align:center;padding:40px 15px}
+.playbill-small{font-size:10px;text-transform:uppercase;letter-spacing:.2em}
+.playbill-title{font:54px/.86 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:-.055em;margin:65px 0 20px}
+.playbill-author{font:17px Georgia,serif}
+.playbill-rule{width:40px;border-top:1px solid var(--ink);margin:35px auto}
+.playbill-foot{font:12px/1.35 Georgia,serif}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(76px,12vw,138px);line-height:.78;letter-spacing:-.065em;text-transform:uppercase;font-weight:400;margin:20px 0 24px}
+.author{font:22px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,145px);line-height:.82;letter-spacing:-.07em;margin-top:38px}
+.rating small{font-size:.21em;display:inline-block;letter-spacing:.02em;margin-left:.16em;white-space:nowrap}
+.review-zone{border-top:1px solid var(--ink);padding:52px 0 78px}
+.review-zone h2{font-family:"Arial Narrow",Arial,sans-serif;font-size:50px;line-height:.9;text-transform:uppercase;font-weight:400;letter-spacing:-.045em;margin:0 0 40px}
+.review{columns:2;column-gap:52px;font:18px/1.55 Georgia,serif}
+.review p{break-inside:avoid;margin:0 0 1.3em}
+.stage-note{break-inside:avoid;border-left:5px solid var(--brown);padding:4px 0 4px 20px;margin:15px 0 30px;font:27px/1.12 "Arial Narrow",Arial,sans-serif;text-transform:uppercase}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:46px}
+.card{border:1px solid var(--ink);min-height:145px;padding:19px;background:var(--cream);box-shadow:4px 5px 0 var(--ink);font:16px/1.3 Georgia,serif}
+.card:nth-child(2){background:#c6cdbd;transform:rotate(-1deg)}
+.card:nth-child(3){background:#c4ced2;transform:rotate(1deg)}
+.card b{display:block;font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin-bottom:15px}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero{grid-template-columns:1fr;gap:48px;padding:42px 0 58px;min-width:0}
+ .hero>*{min-width:0;max-width:100%}
+ .playbill{width:70%;max-width:260px;min-height:365px;box-shadow:6px 7px 0 var(--ink)}
+ .playbill-title{font-size:45px;margin-top:55px}
+ h1{font-size:clamp(63px,19vw,78px);white-space:normal}
+ .rating{font-size:100px;margin-top:30px}
+ .review-zone h2{font-size:40px}
+ .review{columns:1;font-size:17px}
+ .stage-note{font-size:24px}
+ .cards{grid-template-columns:1fr;gap:18px}
+ footer{gap:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к полке</a></nav>
+<main>
+<section class="hero">
+ <div class="playbill">
+  <div class="playbill-inner">
+   <div class="playbill-small">пьеса в четырёх действиях</div>
+   <div class="playbill-title">Дядя<br>Ваня</div>
+   <div class="playbill-author">А. П. Чехов</div>
+   <div class="playbill-rule"></div>
+   <div class="playbill-foot">из архива<br>Рисанкиного Книжного Клуба</div>
+  </div>
+ </div>
+ <div>
+  <div class="kicker">№ 6 в рейтинге клуба</div>
+  <h1>Дядя<br>Ваня</h1>
+  <div class="author">А. П. Чехов</div>
+  <div class="rating">8<small>/10</small></div>
+ </div>
+</section>
+
+<section class="review-zone">
+ <h2>После занавеса</h2>
+ <div class="review">
+  <p>Тех, кому пьеса действительно понравилась, оказалось больше. Кого-то, правда, смутила кажущаяся простота — и самой истории, и поднимаемых проблем.</p>
+  <p>Обсуждали жертвенность и сошлись на том, что её всепоглощающая форма — это скорее плохо. Отдельно затронули роль женщин: их негласную жертвенность и постоянное страдание.</p>
+  <div class="stage-note">Некоторые прочитали пьесу с таким удовольствием, что перечитали её дважды.</div>
+  <p>В целом отметили, что Чехов очень точно показывает собирательный образ «русской души» того времени.</p>
+  <p>И тут мнения разделились: кто-то считает, что с тех пор ничего не изменилось, кто-то — что изменилось многое.</p>
+  <p>В итоге — очень качественная пьеса. Даже если она кажется простой, в ней точно есть проблемы, на которые стоит обратить внимание.</p>
+ </div>
+ <div class="cards">
+   <div class="card"><b>Главная тема</b>Жертвенность — и момент, когда она становится всепоглощающей.</div>
+   <div class="card"><b>Мнения разделились</b>Изменилась ли с тех пор та самая «русская душа»?</div>
+   <div class="card"><b>Факт встречи</b>Кто-то успел прочитать «Дядю Ваню» дважды.</div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

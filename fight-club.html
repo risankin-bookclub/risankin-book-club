@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Бойцовский клуб — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#eee4d0;--ink:#171713;--pink:#c98586;--red:#9d4439;--grey:#b9b4aa;--yellow:#c7a44d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000013 .75px,transparent .75px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:45px;padding:58px 0 72px;align-items:center}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(78px,12vw,145px);line-height:.76;letter-spacing:-.07em;text-transform:uppercase;font-weight:900;margin:22px 0 25px}
+.author{font:22px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,145px);line-height:.82;letter-spacing:-.07em;margin-top:38px}.rating small{font-size:.21em;display:inline-block;letter-spacing:.02em;margin-left:.16em;white-space:nowrap}
+.poster{min-height:430px;background:var(--pink);border:2px solid var(--ink);box-shadow:10px 11px 0 var(--ink);transform:rotate(2deg);padding:28px;position:relative;overflow:hidden}
+.poster:before{content:"";position:absolute;width:160%;height:2px;background:var(--ink);left:-25%;top:49%;transform:rotate(-15deg)}
+.poster:after{content:"";position:absolute;width:160%;height:2px;background:var(--ink);left:-25%;top:55%;transform:rotate(12deg)}
+.poster-top{font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.poster-word{position:absolute;left:20px;bottom:20px;font-family:"Arial Narrow",Arial,sans-serif;font-weight:900;font-size:68px;line-height:.78;text-transform:uppercase;letter-spacing:-.06em;z-index:2}
+.poster-note{position:absolute;right:17px;top:72px;width:145px;background:var(--paper);border:1px solid var(--ink);padding:12px;transform:rotate(-7deg);font:14px/1.15 Georgia,serif;z-index:3}
+.review-zone{border-top:2px solid var(--ink);padding:52px 0 78px}
+.review-zone h2{font-family:"Arial Narrow",Arial,sans-serif;font-size:52px;line-height:.9;text-transform:uppercase;font-weight:900;letter-spacing:-.045em;margin:0 0 40px}
+.review{display:grid;grid-template-columns:1fr 1fr;gap:50px;font:18px/1.55 Georgia,serif}
+.review p{margin:0 0 1.3em}
+.cutout{background:var(--ink);color:var(--paper);padding:24px 20px;font-family:"Arial Narrow",Arial,sans-serif;font-size:29px;line-height:1.02;text-transform:uppercase;transform:rotate(-1deg);margin:10px 0 30px}
+.crossed{display:inline;text-decoration:line-through;text-decoration-thickness:2px}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:45px}
+.note{border:1px solid var(--ink);padding:18px;min-height:125px;background:var(--grey);box-shadow:4px 5px 0 var(--ink);font:16px/1.25 Georgia,serif}
+.note:nth-child(2){background:var(--yellow);transform:rotate(1deg)}
+.note:nth-child(3){background:#d3b0a8;transform:rotate(-1deg)}
+.note b{display:block;font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px}
+footer{border-top:2px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .hero{grid-template-columns:1fr;gap:48px;padding:42px 0 58px}
+ h1{font-size:83px}
+ .rating{font-size:102px;margin-top:30px}
+ .poster{min-height:350px}
+ .poster-word{font-size:54px}
+ .review-zone h2{font-size:41px}
+ .review{grid-template-columns:1fr;gap:0;font-size:17px}
+ .cutout{font-size:25px}
+ .notes{grid-template-columns:1fr;gap:18px}
+}
+
+@media(max-width:700px){
+ html,body{max-width:100%;overflow-x:hidden}
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero,.review-zone,.review,.notes{min-width:0}
+ .hero>*,.review>*,.notes>*{min-width:0;max-width:100%}
+ h1{font-size:clamp(54px,17vw,72px);overflow-wrap:normal}
+ .fight-word{white-space:nowrap;display:inline-block;font-size:.82em;letter-spacing:-.075em}
+ .poster{width:calc(100% - 12px);max-width:100%;margin:0 6px;box-shadow:6px 7px 0 var(--ink);padding:22px}
+ .poster-word{left:16px;right:16px;font-size:clamp(43px,14vw,54px);overflow-wrap:anywhere}
+ .poster-note{right:14px;max-width:42%;width:auto}
+ .cutout{max-width:100%;overflow-wrap:anywhere}
+ footer{gap:16px;flex-wrap:wrap}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к полке</a></nav>
+<main>
+<section class="hero">
+ <div>
+  <div class="kicker">№ 5 в рейтинге клуба</div>
+  <h1><span class="fight-word">Бойцовский</span><br>клуб</h1>
+  <div class="author">Чак Паланик</div>
+  <div class="rating">8<small>/10</small></div>
+ </div>
+ <div class="poster">
+   <div class="poster-top">книга / фильм / две разные атмосферы</div>
+   <div class="poster-note">трудно сепарировать книгу от экранизации</div>
+   <div class="poster-word">разные<br>вещи?</div>
+ </div>
+</section>
+
+<section class="review-zone">
+ <h2>После драки с экранизацией</h2>
+ <div class="review">
+  <div>
+   <p>На оценку сильно повлиял фильм. Оказалось трудно сепарировать книгу от экранизации: у них совершенно разная атмосфера и эстетика, и из-за этого эстетику книги было сложно прочувствовать.</p>
+   <p>В целом роман немного разочаровал, особенно концовка.</p>
+   <div class="cutout">Есть ощущение, что книга и фильм всё-таки про разное.</div>
+  </div>
+  <div>
+   <p>Несмотря на то, что в фильме почти нет «отсебятины».</p>
+   <p>По стилю повествования мнения разделились: кому-то понравился юмор, кому-то — нет повторения, связанные с психическим состоянием главного героя.</p>
+   <p>В итоге пришли к мысли, что это книга о поколении озлобленных мужчин, выросших без отцов. Попытка найти авторитет приводит к тем действиям, которые мы видим в произведении.</p>
+   <p>Естественно, всё это наложили на реальное прошлое, настоящее и будущее — и сделали вывод, что за последние 15 лет мало что изменилось.</p>
+  </div>
+ </div>
+ <div class="notes">
+   <div class="note"><b>Экранизация</b>Почти без «отсебятины», но ощущается совсем иначе.</div>
+   <div class="note"><b>Что разделило мнения</b>Юмор, повторения и сам стиль повествования.</div>
+   <div class="note"><b>Что осталось</b>Разговор о поколении, отцах, авторитетах и том, что изменилось за 15 лет.</div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Всё лето в один день — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f1e7d5;--ink:#171713;--rain:#718795;--sun:#d5aa42;--cloud:#c8c3b8}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;padding:58px 0 72px;align-items:center}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(62px,9.5vw,112px);line-height:.8;letter-spacing:-.065em;text-transform:uppercase;font-weight:400;margin:22px 0 25px}
+.author{font:22px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,145px);line-height:.82;letter-spacing:-.07em;margin-top:38px}
+.rating small{font-size:.21em;display:inline-block;letter-spacing:.02em;margin-left:.16em;white-space:nowrap}
+.weather{height:440px;background:var(--rain);border:1px solid var(--ink);box-shadow:9px 10px 0 var(--ink);position:relative;transform:rotate(1deg);overflow:hidden}
+.sun{position:absolute;width:150px;height:150px;border-radius:50%;background:var(--sun);left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid var(--ink)}
+.cloud{position:absolute;left:-8%;right:-8%;height:115px;background:var(--cloud);border:1px solid var(--ink)}
+.c1{top:25px;transform:rotate(-2deg)}.c2{bottom:30px;transform:rotate(2deg)}
+.rain{position:absolute;inset:0;background:repeating-linear-gradient(105deg,transparent 0 20px,#171713 21px 22px,transparent 23px 42px);opacity:.32}
+.window{position:absolute;left:50%;top:50%;width:185px;height:185px;transform:translate(-50%,-50%);border:2px solid var(--paper)}
+.window:before,.window:after{content:"";position:absolute;background:var(--paper)}
+.window:before{width:2px;height:100%;left:50%}.window:after{height:2px;width:100%;top:50%}
+.weather-note{position:absolute;right:16px;bottom:14px;background:var(--paper);border:1px solid var(--ink);padding:8px 10px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;transform:rotate(-2deg)}
+.review-zone{border-top:1px solid var(--ink);padding:52px 0 78px}
+.review-zone h2{font-family:"Arial Narrow",Arial,sans-serif;font-size:50px;line-height:.9;text-transform:uppercase;font-weight:400;letter-spacing:-.045em;margin:0 0 40px}
+.lost{max-width:760px;margin:0 auto;background:#ded3bd;border:1px solid var(--ink);box-shadow:7px 8px 0 var(--ink);padding:48px 46px;transform:rotate(-.7deg);position:relative}
+.lost:before{content:"";position:absolute;width:95px;height:28px;background:#c8bda6aa;left:50%;top:-14px;transform:translateX(-50%) rotate(2deg)}
+.lost .tiny{font-size:10px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:36px}
+.lost p{font:28px/1.3 Georgia,serif;margin:0}
+.memory{margin-top:28px;padding-top:18px;border-top:1px solid var(--ink);font:13px/1.45 Arial,sans-serif;text-transform:uppercase;letter-spacing:.09em}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero{grid-template-columns:1fr;gap:48px;padding:42px 0 58px}
+ .hero>*{min-width:0;max-width:100%}
+ h1{font-size:clamp(48px,14.7vw,62px);line-height:.84}
+ .rating{font-size:100px;margin-top:30px}
+ .weather{height:350px;width:calc(100% - 12px);margin:0 6px;box-shadow:6px 7px 0 var(--ink)}
+ .sun{width:120px;height:120px}.window{width:150px;height:150px}
+ .review-zone h2{font-size:39px}
+ .lost{width:calc(100% - 12px);padding:38px 25px;box-shadow:5px 6px 0 var(--ink)}
+ .lost p{font-size:23px}
+ footer{gap:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к архиву</a></nav>
+<main>
+<section class="hero">
+ <div>
+  <div class="kicker">№ 13 в рейтинге клуба</div>
+  <h1>Всё лето<br>в один день</h1>
+  <div class="author">Рэй Брэдбери</div>
+  <div class="rating">6,6<small>/10</small></div>
+ </div>
+ <div class="weather">
+   <div class="rain"></div>
+   <div class="cloud c1"></div>
+   <div class="sun"></div>
+   <div class="cloud c2"></div>
+   <div class="window"></div>
+   <div class="weather-note">солнце было недолго</div>
+ </div>
+</section>
+
+<section class="review-zone">
+ <h2>А рецензия исчезла</h2>
+ <div class="lost">
+   <div class="tiny">архивная карточка · запись не сохранилась</div>
+   <p>«Упс, рецензия останется только в памяти участников той встречи книжного клуба»</p>
+   <div class="memory">Осталась оценка — 6,6. Остальное, кажется, прожило ровно один день.</div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

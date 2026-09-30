@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Занятой человек — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f2e8d5;--ink:#171713;--blue:#667e8d;--wine:#8f514b;--grey:#c8c1b4;--cream:#ded1b5}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;padding:58px 0 72px;align-items:center}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(72px,11vw,128px);line-height:.77;letter-spacing:-.065em;text-transform:uppercase;font-weight:400;margin:22px 0 25px}
+.author{font:22px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,145px);line-height:.82;letter-spacing:-.07em;margin-top:38px}
+.rating small{font-size:.21em;display:inline-block;letter-spacing:.02em;margin-left:.16em;white-space:nowrap}
+.puzzle{height:440px;background:var(--blue);border:1px solid var(--ink);box-shadow:9px 10px 0 var(--ink);transform:rotate(1.2deg);position:relative;overflow:hidden}
+.fragment{position:absolute;background:var(--paper);border:1px solid var(--ink);padding:14px;font:15px/1.2 Georgia,serif}
+.f1{width:190px;left:25px;top:42px;transform:rotate(-5deg)}
+.f2{width:170px;right:24px;top:145px;transform:rotate(4deg)}
+.f3{width:205px;left:45px;bottom:44px;transform:rotate(2deg)}
+.redact{display:inline-block;background:var(--ink);height:.75em;width:64px;vertical-align:middle;margin:0 3px}
+.qmark{position:absolute;right:18px;top:8px;color:var(--paper);font:94px/1 Georgia,serif}
+.puzzle-label{position:absolute;right:20px;bottom:17px;color:var(--paper);font-size:10px;text-transform:uppercase;letter-spacing:.15em}
+.review-zone{border-top:1px solid var(--ink);padding:52px 0 78px}
+.review-zone h2{font-family:"Arial Narrow",Arial,sans-serif;font-size:49px;line-height:.9;text-transform:uppercase;font-weight:400;letter-spacing:-.045em;margin:0 0 40px}
+.review{columns:2;column-gap:52px;font:18px/1.55 Georgia,serif}
+.review p{break-inside:avoid;margin:0 0 1.3em}
+.pull{break-inside:avoid;background:var(--wine);color:var(--paper);border:1px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:23px;margin:10px 0 30px;transform:rotate(-1deg);font-family:"Arial Narrow",Arial,sans-serif;font-size:29px;line-height:1.05;text-transform:uppercase}
+.path{margin-top:45px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);display:grid;grid-template-columns:repeat(3,1fr)}
+.step{padding:22px;border-right:1px solid var(--ink);font:16px/1.3 Georgia,serif}
+.step:last-child{border-right:0}
+.step b{display:block;font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;margin-bottom:13px}
+.step:nth-child(2){background:var(--cream)}
+.step:nth-child(3){background:var(--grey)}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero{grid-template-columns:1fr;gap:48px;padding:42px 0 58px}
+ .hero>*{min-width:0;max-width:100%}
+ h1{font-size:clamp(53px,16vw,67px)}
+ .rating{font-size:100px;margin-top:30px}
+ .puzzle{height:370px;width:calc(100% - 12px);margin:0 6px;box-shadow:6px 7px 0 var(--ink)}
+ .f1{width:165px;left:16px}.f2{width:155px;right:14px}.f3{width:180px;left:25px}
+ .review-zone h2{font-size:39px}
+ .review{columns:1;font-size:17px}
+ .pull{font-size:24px}
+ .path{grid-template-columns:1fr}
+ .step{border-right:0;border-bottom:1px solid var(--ink)}
+ .step:last-child{border-bottom:0}
+ footer{gap:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к архиву</a></nav>
+<main>
+<section class="hero">
+ <div>
+  <div class="kicker">№ 11 в рейтинге клуба</div>
+  <h1>Занятой<br>человек</h1>
+  <div class="author">Владимир Набоков</div>
+  <div class="rating">6,8<small>/10</small></div>
+ </div>
+ <div class="puzzle">
+   <div class="qmark">?</div>
+   <div class="fragment f1">очень красиво,<br>но <span class="redact"></span></div>
+   <div class="fragment f2">теория № 4<br><s>тоже не сходится</s></div>
+   <div class="fragment f3">символизм → биография → отец</div>
+   <div class="puzzle-label">дело всё-таки раскрыто</div>
+ </div>
+</section>
+
+<section class="review-zone">
+ <h2>Расследование смысла</h2>
+ <div class="review">
+   <p>Честно говоря, здесь мы почти единогласно пришли к мысли: «Очень красиво, но ничего не понятно». Но это нас не остановило.</p>
+   <div class="pull">Сначала строили теории и вместе же их опровергали.</div>
+   <p>После обсуждения слога Набокова мы начали искать смысл — и всё-таки нашли его.</p>
+   <p>А потом сдались и пошли исследовать мировую паутину. Оказалось, что рассказ буквально переполнен символизмом, и это делает его только интереснее.</p>
+   <p>Произведение ощущается как настоящий артхаус: без понимания биографии Набокова довольно трудно уловить, о чём оно.</p>
+   <p>В итоге выяснилось — об отце. И, честно говоря, очень радует, что до этого мы всё-таки докопались.</p>
+ </div>
+ <div class="path">
+   <div class="step"><b>Шаг 01</b>Признать: красиво, но ничего не понятно.</div>
+   <div class="step"><b>Шаг 02</b>Построить несколько теорий и самостоятельно их разрушить.</div>
+   <div class="step"><b>Шаг 03</b>Дойти через символизм и биографию Набокова до отца.</div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

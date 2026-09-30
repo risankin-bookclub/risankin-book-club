@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сжечь сарай — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f1e7d4;--ink:#171713;--red:#a84836;--char:#343431;--blue:#768d98;--ash:#c8c0b1}
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;background-image:radial-gradient(#00000012 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink);padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+a{color:inherit;text-decoration:none}.back{border-bottom:1px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;padding:58px 0 74px;align-items:center}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,150px);line-height:.76;letter-spacing:-.07em;text-transform:uppercase;font-weight:400;margin:22px 0 25px}
+.author{font:22px Georgia,serif}
+.rating{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(82px,13vw,145px);line-height:.82;letter-spacing:-.07em;margin-top:38px}
+.rating small{font-size:.21em;display:inline-block;letter-spacing:.02em;margin-left:.16em;white-space:nowrap}
+.scene{height:430px;border:1px solid var(--ink);background:#d9d0be;box-shadow:9px 10px 0 var(--ink);position:relative;overflow:hidden;transform:rotate(1.3deg)}
+.horizon{position:absolute;left:0;right:0;bottom:110px;border-top:1px solid var(--ink)}
+.barn{position:absolute;width:155px;height:112px;left:50%;bottom:110px;transform:translateX(-50%);background:var(--char);border:1px solid var(--ink)}
+.barn:before{content:"";position:absolute;left:-17px;top:-48px;border-left:94px solid transparent;border-right:94px solid transparent;border-bottom:49px solid var(--char)}
+.barn:after{content:"";position:absolute;width:42px;height:67px;background:var(--paper);left:56px;bottom:0}
+.sun{position:absolute;width:58px;height:58px;border:1px solid var(--ink);border-radius:50%;right:38px;top:42px;background:var(--red)}
+.scene-note{position:absolute;left:18px;top:20px;font:12px Georgia,serif;max-width:145px;transform:rotate(-3deg)}
+.scene-bottom{position:absolute;left:20px;bottom:25px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.review-zone{border-top:1px solid var(--ink);padding:52px 0 78px;display:grid;grid-template-columns:.7fr 1.3fr;gap:55px}
+.review-zone h2{font-family:"Arial Narrow",Arial,sans-serif;font-size:49px;line-height:.9;text-transform:uppercase;font-weight:400;letter-spacing:-.045em;margin:0}
+.side-note{margin-top:32px;background:var(--red);color:var(--paper);border:1px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:20px;font:20px/1.2 Georgia,serif;transform:rotate(-1deg)}
+.review{font:20px/1.55 Georgia,serif}
+.review p{margin:0 0 1.35em}
+.big{font-family:"Arial Narrow",Arial,sans-serif;font-size:35px;line-height:1.02;text-transform:uppercase;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:24px 0;margin:30px 0}
+.tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}
+.tag{border:1px solid var(--ink);padding:10px 13px;font:12px Georgia,serif;background:var(--ash);transform:rotate(-1deg)}
+.tag:nth-child(2){background:#bdc8cb;transform:rotate(1deg)}
+footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-content:space-between;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+ .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px;overflow:hidden}
+ .hero{grid-template-columns:1fr;gap:48px;padding:42px 0 58px}
+ .hero>*{min-width:0;max-width:100%}
+ h1{font-size:clamp(62px,19vw,78px)}
+ .rating{font-size:100px;margin-top:30px}
+ .scene{height:340px;width:calc(100% - 12px);margin:0 6px;box-shadow:6px 7px 0 var(--ink)}
+ .barn{width:125px;height:92px}.barn:before{left:-14px;top:-40px;border-left-width:77px;border-right-width:77px;border-bottom-width:41px}.barn:after{width:34px;height:55px;left:45px}
+ .review-zone{grid-template-columns:1fr;gap:32px;padding:45px 0 65px}
+ .review-zone h2{font-size:40px}
+ .review{font-size:18px}
+ .big{font-size:28px}
+ footer{gap:16px;flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>РКК</b><a class="back" href="index.html#read">← обратно к полке</a></nav>
+<main>
+<section class="hero">
+ <div>
+  <div class="kicker">№ 7 в рейтинге клуба</div>
+  <h1>Сжечь<br>сарай</h1>
+  <div class="author">Харуки Мураками</div>
+  <div class="rating">7,5<small>/10</small></div>
+ </div>
+ <div class="scene">
+   <div class="sun"></div>
+   <div class="scene-note">короткий рассказ,<br>а вопросов всё равно много</div>
+   <div class="horizon"></div>
+   <div class="barn"></div>
+   <div class="scene-bottom">архив встречи · 7,5 / 10</div>
+ </div>
+</section>
+
+<section class="review-zone">
+ <div>
+  <h2>Что мы<br>поняли</h2>
+  <div class="side-note">Оценку поставили два участника. Остальные — двоечники.</div>
+ </div>
+ <div class="review">
+   <p>Оценку поставили два участника, остальные — двоечники.</p>
+   <p>Забавно, что каждый раз, несмотря на абсолютно случайный выбор книг, их темы всё равно пересекаются.</p>
+   <div class="big">В этот раз разговор ушёл в культурный контекст.</div>
+   <p>Обсуждали, как сложно русскому читателю до конца понять азиатский культурный контекст — из-за этого анализ произведения даётся тяжелее.</p>
+   <div class="tags">
+     <span class="tag">случайный выбор</span>
+     <span class="tag">темы снова пересеклись</span>
+     <span class="tag">культурный контекст</span>
+   </div>
+ </div>
+</section>
+</main>
+<footer><span>Рисанкин Книжный Клуб</span><span>архив встреч</span></footer>
+</div>
+</body>
+</html>

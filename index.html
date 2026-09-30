@@ -122,6 +122,55 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
  .current-large:after{right:-30px!important}
  .current-small:after{left:-35px!important}
 }
+
+/* v6 — editorial scrapbook */
+.collage-meeting{
+  overflow:hidden; position:relative; padding:42px 34px 70px!important;
+  background:#f3ead2!important; border:1px solid #26231d!important;
+  box-shadow:10px 12px 0 #25241f!important;
+}
+.meeting-kicker{font:500 12px Arial,sans-serif;letter-spacing:.28em;margin-bottom:12px}
+.meeting-date{font-family:Georgia,serif;font-size:clamp(44px,7.2vw,86px);line-height:.9;letter-spacing:-.055em;white-space:nowrap}
+.place-line{margin:31px 0 10px 5%;font:italic 20px Georgia,serif;position:relative;z-index:8}
+.place-line em{font-weight:700;font-size:1.25em}
+.map-text{display:inline-block;margin-left:18px;color:#171713;text-decoration:none;border-bottom:2px solid #d3a628;font:italic 17px Georgia,serif;transform:rotate(-3deg)}
+.reading-collage{position:relative;min-height:1050px;margin-top:26px}
+.collage-book{position:absolute;background:transparent!important;border:0!important}
+.collage-cover{box-sizing:border-box;background:#efe1bd;padding:18px}
+.collage-cover img{display:block;width:100%;height:100%;object-fit:contain}
+.vonnegut{left:1%;top:35px;width:58%;transform:rotate(-3deg);z-index:2}
+.vonnegut .collage-cover{aspect-ratio:2/3}
+.red-frame{border:9px solid #c63b2f;box-shadow:-12px 14px 0 rgba(177,145,91,.35)}
+.von-caption{position:absolute;left:100%;top:23%;width:70%;margin-left:18px;transform:rotate(2deg)}
+.von-caption h3,.paper-note h3{font:italic 38px/1 Georgia,serif;margin:0 0 8px}
+.von-caption p,.paper-note p{font:18px Arial,sans-serif;margin:0}
+.dick{right:0;top:530px;width:49%;transform:rotate(3deg);z-index:4}
+.dick .collage-cover{aspect-ratio:2/3}
+.blue-frame{border:9px solid #3e6eb5;box-shadow:11px 13px 0 rgba(106,128,111,.35)}
+.paper-note{position:absolute;right:105%;top:21%;width:95%;padding:25px 20px;background:#eadfc4;transform:rotate(-5deg);z-index:5}
+.paper-note h3{border-bottom:3px solid #3e6eb5;padding-bottom:8px}
+.tape{position:absolute;width:88px;height:24px;background:rgba(195,177,137,.55);z-index:8}
+.tape-a{left:-23px;top:10px;transform:rotate(-16deg)}
+.doodle{position:absolute;font-family:Georgia,serif}
+.doodle-red{right:-58%;top:53%;font-size:54px;color:#c63b2f;transform:rotate(16deg)}
+.doodle-black{left:-60px;bottom:10%;font-size:33px;transform:rotate(-10deg)}
+.paperclip{position:absolute;right:4%;top:-16px;font-size:48px;z-index:10;transform:rotate(15deg);opacity:.65}
+@media(max-width:700px){
+ .collage-meeting{padding:34px 20px 55px!important}
+ .meeting-date{font-size:clamp(42px,11vw,61px);white-space:normal}
+ .place-line{font-size:17px;margin:27px 0 0 5%}
+ .map-text{display:block;width:max-content;margin:9px 0 0 0}
+ .reading-collage{min-height:1060px;margin-top:28px}
+ .vonnegut{left:1%;top:25px;width:76%}
+ .von-caption{left:67%;top:58%;width:55%;margin-left:0;z-index:8}
+ .von-caption h3{font-size:29px}
+ .dick{right:0;top:590px;width:68%}
+ .paper-note{right:72%;top:30%;width:65%;padding:17px 12px}
+ .paper-note h3{font-size:27px}
+ .paper-note p{font-size:15px}
+ .doodle-red{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -133,23 +182,39 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 <div class="scribble">✶ книжный архив</div>
 </header>
 
-<section class="meeting" id="now">
-<div class="paper-card">
-<div class="tag">Следующая встреча</div>
-<h2>2 октября · 18:30</h2>
-<div class="venue">PaPaella · Банковский переулок, 2/5 <a class="maplink" href="https://yandex.ru/maps/?text=PaPaella%20Банковский%20переулок%202%2F5%20Москва" target="_blank" rel="noopener">↗ карта</a></div>
-<div class="reads">
-<div class="book-now current-large"><span class="tag">Крупная форма</span>
-<div class="cover-art art1"><img src="vremetryasenie.jpg" alt="Обложка Времетрясение"></div>
-<h3>Времетрясение</h3><p>Курт Воннегут</p></div>
-<div class="book-now current-small"><span class="tag">Малая форма</span>
-<div class="cover-art art2"><img src="philip-k-dick.jpg" alt="Обложка Филип К. Дик — Вспомнить всё"></div>
-<h3>Мы вам всё припомним</h3><p>Филип К. Дик</p></div>
-</div>
-</div>
-<div class="rsvp"><div class="tag">RSVP</div><h3>Ты будешь?</h3><div class="buttons"><button class="btn" onclick="rsvp(this,'Буду!')">Буду</button><button class="btn" onclick="rsvp(this,'Не буду')">Не буду</button></div><div id="rsvp-note"></div></div>
-</section>
+<section class="meeting collage-meeting" id="now">
+  <div class="meeting-kicker">СЛЕДУЮЩАЯ ВСТРЕЧА</div>
+  <div class="meeting-date">2 ОКТЯБРЯ · 18:30</div>
+  <div class="place-line"><em>PaPaella</em> · Банковский переулок, 2/5
+    <a class="map-text" href="https://yandex.ru/maps/?text=PaPaella%20Банковский%20переулок%202%2F5%20Москва" target="_blank" rel="noopener">карта ↗</a>
+  </div>
 
+  <div class="reading-collage">
+    <article class="collage-book vonnegut">
+      <div class="tape tape-a"></div>
+      <div class="collage-cover red-frame">
+        <img src="vremetryasenie.jpg" alt="Курт Воннегут — Времетрясение">
+      </div>
+      <div class="book-caption von-caption">
+        <h3>Времетрясение</h3>
+        <p>Курт Воннегут</p>
+      </div>
+      <span class="doodle doodle-red">☆</span>
+    </article>
+
+    <article class="collage-book dick">
+      <div class="paper-note">
+        <h3>Мы вам всё<br>припомним</h3>
+        <p>Филип К. Дик</p>
+      </div>
+      <div class="collage-cover blue-frame">
+        <img src="philip-k-dick.jpg" alt="Филип К. Дик — Вспомнить всё">
+      </div>
+      <span class="paperclip">⌇</span>
+      <span class="doodle doodle-black">✶</span>
+    </article>
+  </div>
+</section>
 <section id="read">
 <h2 class="section-title">Мы прочитали</h2>
 <div class="shelf">

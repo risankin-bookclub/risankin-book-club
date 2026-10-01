@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ранее в клубе — Рисанкин Книжный Клуб</title>
+<style>
+:root{--paper:#f1e7d5;--ink:#171713;--red:#a95346;--blue:#708895;--yellow:#c8a449;--green:#78866d;--cream:#f7efdf}
+*{box-sizing:border-box} html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,sans-serif;background-image:radial-gradient(#00000010 .7px,transparent .7px);background-size:6px 6px}
+.wrap{max-width:1080px;margin:auto;padding:22px} a{color:inherit;text-decoration:none}
+nav{display:flex;justify-content:space-between;border-bottom:1px solid;padding:8px 0 14px;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+.hero{padding:58px 0 52px;position:relative} .ey{font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+h1{font-family:"Arial Narrow",Arial,sans-serif;font-size:clamp(68px,12vw,132px);line-height:.78;letter-spacing:-.075em;text-transform:uppercase;font-weight:400;margin:25px 0 24px;max-width:900px}
+.hero p{font:17px/1.45 Georgia,serif;max-width:590px;margin:0}
+.hero-note{position:absolute;right:5%;bottom:34px;background:var(--yellow);border:1px solid;padding:10px 15px;transform:rotate(2deg);box-shadow:4px 5px 0 var(--ink);font:12px/1.2 Georgia,serif}
+.timeline{border-top:1px solid;padding-top:36px}
+.issue{position:relative;border:1px solid var(--ink);background:#eadfc9;padding:24px;margin:0 0 34px;box-shadow:7px 8px 0 var(--ink)}
+.issue:nth-child(4n+1){transform:rotate(-.18deg)} .issue:nth-child(4n+2){transform:rotate(.14deg)} .issue:nth-child(4n+3){transform:rotate(-.1deg)}
+.issue-top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid;padding-bottom:18px;margin-bottom:20px}
+.issue-no{font:24px/.9 "Arial Narrow",Arial,sans-serif;letter-spacing:-.03em} .issue-no b{font-size:48px;font-weight:400}
+.date{font:12px Georgia,serif;border:1px solid;padding:7px 10px;background:var(--cream);transform:rotate(1.5deg)}
+.forms{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-card{border:1px solid var(--ink);padding:17px;background:var(--cream);min-width:0}
+.form-card:first-child{box-shadow:4px 4px 0 var(--red)} .form-card:last-child{box-shadow:4px 4px 0 var(--blue)}
+.form-label{font-size:9px;letter-spacing:.16em;margin-bottom:14px}
+.winner{border-top:1px solid;border-bottom:1px solid;padding:13px 0;margin-bottom:12px}
+.winner span,.finalists span{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}
+.winner strong{font:24px/1.05 Georgia,serif;font-weight:400;display:block}
+.finalists{padding:4px 0 10px} .finalists i{font:12px/1.25 Georgia,serif;font-style:normal;display:block;margin:5px 0}
+details{border-top:1px dashed #17171366;padding-top:10px;margin-top:5px} summary{cursor:pointer;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
+.booklist{padding-left:20px;margin:14px 0 0} .booklist li{font:12px/1.35 Georgia,serif;margin:7px 0;padding-left:3px}
+.current{background:#d7c56d;box-shadow:9px 10px 0 var(--ink)} .current .form-card:first-child{background:#d79a8b} .current .form-card:last-child{background:#aabdc5}
+.tape{position:absolute;right:40px;top:-18px;background:#f4e9d5;border:1px solid;padding:8px 18px;transform:rotate(3deg);font-size:9px;letter-spacing:.18em}
+.waiting{font:27px/1 Georgia,serif;border-top:1px solid;border-bottom:1px solid;padding:13px 0;margin-bottom:8px}
+.vote-btn{display:block;width:100%;margin-top:20px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);padding:17px;text-align:center;text-transform:uppercase;letter-spacing:.15em;font-size:11px}
+footer{border-top:1px solid;margin-top:60px;padding:20px 0 40px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:760px){
+.wrap{padding:0 16px} nav{padding-top:22px} .hero{padding:44px 0 42px} h1{font-size:clamp(55px,17vw,78px);max-width:100%;margin-top:20px}
+.hero-note{position:static;display:inline-block;margin-top:24px;transform:rotate(-1deg)}
+.timeline{padding-top:25px} .issue{padding:17px;margin-bottom:28px;box-shadow:5px 6px 0 var(--ink);transform:none!important}
+.issue-top{align-items:center} .issue-no{font-size:17px} .issue-no b{font-size:35px} .date{font-size:10px}
+.forms{grid-template-columns:1fr;gap:15px} .winner strong{font-size:21px} .tape{right:18px}
+}
+</style></head>
+<body><div class="wrap">
+<nav><b>РКК</b><a href="index.html">← на главную</a></nav>
+<header class="hero"><div class="ey">архив выбора книг</div><h1>Ранее<br>в клубе</h1><p>Все наши прошлые выборы: что попадало в список, что проходило отбор и что в итоге мы читали.</p><div class="hero-note">9 прошлых выпусков<br>+ текущий</div></header>
+<main class="timeline"><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№01</b></div><div class="date">Октябрь 2025</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Михаил Булгаков «Мастер и Маргарита»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Эрих Мария Ремарк. «Черный обелиск»</i><i>Владимир Набоков «Камера обскура»</i><i>Джон Грэй «Мужчины с Марса, женщины с Венеры»</i><i>Элизабет Блэкберн, Элисса Эпель «Эффект теломер»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Герман Гессе. «Степной волк»</li><li>Эрих Мария Ремарк. «Черный обелиск»</li><li>Фредрик Бакман. «Тревожные люди»</li><li>Владимир Набоков «Камера обскура»</li><li>Джон Грэй «Мужчины с Марса, женщины с Венеры»</li><li>Николай Лесков. «Леди Макбет Мценского уезда»</li><li>Александр Островский «Бесприданница»</li><li>Райан Холидей «Эго — враг»</li><li>Элизабет Блэкберн, Элисса Эпель «Эффект теломер»</li><li>Михаил Булгаков «Мастер и Маргарита»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Фёдор Достоевский. «Двойник»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Антон Чехов. «Скрипка Ротшильда»</i><i>Всеволод Гаршин «Красный цветок»</i><i>Василий Шукшин. «Охота жить»</i><i>Мопассан. «Ночь»</i></div>
+      <details><summary>Все кандидаты · 9</summary><ol class="booklist"><li>Гайто Газданов. «Счастье»</li><li>Антон Чехов. «Скрипка Ротшильда»</li><li>Фёдор Достоевский. «Маленький герой»</li><li>Роджер Желязны, «Роза для Экклезиаста»</li><li>Владимир Сорокин «В доме офицеров»</li><li>Всеволод Гаршин «Красный цветок»</li><li>Фёдор Достоевский. «Двойник»</li><li>Василий Шукшин. «Охота жить»</li><li>Мопассан. «Ночь»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№02</b></div><div class="date">Ноябрь 2025</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Ребекка Куанг. «Йеллоуфейс»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Дэн Браун. «Точка обмана»</i><i>Виктор Пелевин. «Жизнь насекомых»</i><i>Льюисс Кэрролл. «Алиса в стране чудес»</i><i>Борис Зарьков. «ДНК Бренда. Как построить сильный бренд в индустрии гостеприимства и не только»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Дэн Браун. «Точка обмана»</li><li>Гомер. «Одиссея»</li><li>Уильям Шекспир. «Гамлет»</li><li>Вьет Тхань Нгуен. «Сочувствующий»</li><li>Виктор Пелевин. «Жизнь насекомых»</li><li>Ребекка Куанг. «Йеллоуфейс»</li><li>Льюисс Кэрролл. «Алиса в стране чудес»</li><li>Борис Зарьков. «ДНК Бренда. Как построить сильный бренд в индустрии гостеприимства и не только»</li><li>Элизабет Блэкберн, Элисса Эпель. «Эффект теломер»</li><li>Иэн Макьюэн. «Искупление»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Василий Шукшин. «Танцующий Шива»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Джек Лондон. «Рожденная в ночи»</i><i>Хан Чанхун. «Мне здесь нравится»</i><i>Иван Бунин. «Часовня»</i><i>Сергей Довлатов. «Зимняя шапка»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Антон Чехов. «Чёрный монах»</li><li>Константин Паустовский. «Старый повар»</li><li>Плавт. «Два Менехма»</li><li>Джек Лондон. «Рожденная в ночи»</li><li>Антон Чехов. «Скрипка Ротшильда»</li><li>Хан Чанхун. «Мне здесь нравится»</li><li>Фёдор Достоевский. «Сон смешного человека»</li><li>Иван Бунин. «Часовня»</li><li>Сергей Довлатов. «Зимняя шапка»</li><li>Василий Шукшин. «Танцующий Шива»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№03</b></div><div class="date">Декабрь-январь 2025</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Братья Стругацкие. «Отель &quot;У Погибшего альпиниста&quot;»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Диана Сеттерфилд. «Тринадцатая сказка»</i><i>Сомерсет Моэм. «Рождественские каникулы»</i><i>Майкл Каннингем. «Снежная королева»</i><i>Фэнни Флэгг. «Рождество и красный кардинал»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Франц Кафка. «Замок»</li><li>Ю Нёсбе. «Снеговик»</li><li>Диана Сеттерфилд. «Тринадцатая сказка»</li><li>Нил Гейман. «Одд и ледяные великаны»</li><li>Братья Стругацкие. «Отель &quot;У Погибшего альпиниста&quot;»</li><li>Ясунари Кавабата. «Снежная страна»</li><li>Сомерсет Моэм. «Рождественские каникулы»</li><li>Орхан Памук. «Снег»</li><li>Майкл Каннингем. «Снежная королева»</li><li>Фэнни Флэгг. «Рождество и красный кардинал»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Александр Куприн. «Бедный принц»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>О. Генри. «Дары Волхвов»</i><i>Александр Грин. «Новогодний праздник отца и маленькой дочери»</i><i>Аркадий Гайдар. «Чук и Гек»</i><i>Туве Янсон. «Елка»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>О. Генри. «Дары Волхвов»</li><li>Лев Толстой. «Метель»</li><li>Александр Грин. «Новогодний праздник отца и маленькой дочери»</li><li>Доктор Сьюз. «Как Гринч Рождество украл»</li><li>Аркадий Гайдар. «Чук и Гек»</li><li>Чарльз Диккенс. «Рождественская песнь в прозе. Святочный рассказ с привидениями»</li><li>Туве Янсон. «Елка»</li><li>Александр Куприн. «Бедный принц»</li><li>Александр Пушкин. «Метель»</li><li>Антон Чехов. «Новогодняя пытка»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№04</b></div><div class="date">Февраль 2026</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Чак Паланик. «Бойцовский клуб»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Уильям Шекспир. «Ромео и Джульетта»</i><i>Майкл Ондатже. «Английский пациент»</i><i>Луиза Мэй Олкотт. «Маленькие женщины»</i><i>Джером К. Джером. «Трое в лодке, не считая собаки»</i></div>
+      <details><summary>Все кандидаты · 8</summary><ol class="booklist"><li>Лев Толстой. «Исповедь»</li><li>Уильям Шекспир. «Ромео и Джульетта»</li><li>Майкл Ондатже. «Английский пациент»</li><li>Артур Конан Дойл. «Приключения Шерлока Холмса»</li><li>Борис Акунин. «Азазель»</li><li>Луиза Мэй Олкотт. «Маленькие женщины»</li><li>Чак Паланик. «Бойцовский клуб»</li><li>Джером К. Джером. «Трое в лодке, не считая собаки»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Харуки Мураками. «Сжечь сарай»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Юкио Мисима. «Пионы»</i><i>Тит Макций Плавт. «Два Менехма»</i><i>Надежда Тэффи. «Свои и чужие»</i><i>Хулио Кортасар. «Преследователь»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Константин Паустовский. «Барсучий нос»</li><li>Юкио Мисима. «Пионы»</li><li>Джеймс Джойс. «Два кавалера» («Два рыцаря»)</li><li>Тит Макций Плавт. «Два Менехма»</li><li>Надежда Тэффи. «Свои и чужие»</li><li>Иосиф Бродский. «Конец прекрасной эпохи»</li><li>Хулио Кортасар. «Преследователь»</li><li>Константин Батюшков. «Тень друга»</li><li>Максим Горький. «Исключительный факт»</li><li>Харуки Мураками. «Сжечь сарай»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№05</b></div><div class="date">Март 2026</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Антон Павлович Чехов. «Дядя Ваня»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Колин Маккалоу. «Поющие в терновнике»</i><i>Гастон Леру. «Призрак Оперы»</i><i>Илья Эренбург. «Необычайные похождения Хулио Хуренито и его учеников»</i><i>Линь Ихань. «Райский сад первой любви»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Наринэ Абгарян. «С неба упали три яблока»</li><li>Валера Разгуляев. «Бирюзовое управление на практике: Опыт российских компаний»</li><li>Колин Маккалоу. «Поющие в терновнике»</li><li>Фрэнсис Скотт Фицджеральд. «Великий Гэтсби»</li><li>Джен Синсеро. «НИ СЫ. Будь уверен в своих силах и не позволяй сомнениям мешать тебе двигаться вперёд»</li><li>Владимир Войнович. «Москва 2042»</li><li>Гастон Леру. «Призрак Оперы»</li><li>Антон Павлович Чехов. «Дядя Ваня»</li><li>Илья Эренбург. «Необычайные похождения Хулио Хуренито и его учеников»</li><li>Линь Ихань. «Райский сад первой любви»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Виктор Пелевин. «Некромент»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Герман Гессе. «Последнее лето Клингзора»</i><i>Николай Васильевич Гоголь. «Заколдованное место»</i><i>Харлан Эллисон. «Покайся, Арлекин!» — сказал Тиктакщик»</i><i>Чарльз Буковски. «Самая красивая женщина в городе»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Федор Сологуб. «Маленький человек»</li><li>Амброз Бирс. «Чикамога»</li><li>Виктор Пелевин. «Некромент»</li><li>Герман Гессе. «Последнее лето Клингзора»</li><li>Николай Васильевич Гоголь. «Заколдованное место»</li><li>Викентий Викентьевич Вересаев. «Перед завесою»</li><li>Харлан Эллисон. «Покайся, Арлекин!» — сказал Тиктакщик»</li><li>Стивен Кинг. «Плот»</li><li>Чарльз Буковски. «Самая красивая женщина в городе»</li><li>Джеймс Джойс. «Облачко»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№06</b></div><div class="date">Апрель 2026</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Бернхард Шлинк. «Чтец»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Дина Рубина. «На солнечной стороне улицы»</i><i>Иван Бунин. «Митина любовь»</i><i>Уильям Гибсон. «Нейромант»</i><i>Аласдер Грэй. «Бедные-несчастные»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Рэй Брэдбери. «Вино из одуванчиков»</li><li>Дина Рубина. «На солнечной стороне улицы»</li><li>Иван Бунин. «Митина любовь»</li><li>Максим Горький. «Старуха Изергиль»</li><li>Бернхард Шлинк. «Чтец»</li><li>Уильям Шекспир. «Король Лир»</li><li>Уильям Гибсон. «Нейромант»</li><li>Салман Рушди. «Город Победы»</li><li>Мишель Уэльбек. «Возможность острова»</li><li>Аласдер Грэй. «Бедные-несчастные»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Владимир Набоков. «Занятой человек»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Иосиф Бродский. «Полторы комнаты»</i><i>Флип Дик. «Мы вам все припомним»</i><i>Рэй Брэдбери. «Калейдоскоп»</i><i>Азербайджанская народная сказка. «Золотой подсвечник»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Николай Гоголь. «Старосветские помещики»</li><li>Иосиф Бродский. «Полторы комнаты»</li><li>Александр Герцен. «Сорока-воровка»</li><li>Иван Бунин. «Петлистые уши»</li><li>Флип Дик. «Мы вам все припомним»</li><li>Рэй Брэдбери. «Калейдоскоп»</li><li>Азербайджанская народная сказка. «Золотой подсвечник»</li><li>Юрий Казаков. «Во сне ты горько плакал»</li><li>Константин Паустовский. «Старый повар»</li><li>Владимир Набоков. «Занятой человек»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№07</b></div><div class="date">Май 2026</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Гэнки Кавамура. «Если все кошки в мире исчезнут»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Диана Удовиченко. «Медоед»</i><i>Курт Воннегут. «Времетрясение»</i><i>Джек Лондон. «Странник по звездам»</i><i>Оноре де Бальзак. «Отец Горио»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Франц Кафка. «Америка»</li><li>Слава Сэ. «Маленькая опера»</li><li>Дэн Браун. «Утраченный символ»</li><li>Диана Удовиченко. «Медоед»</li><li>Гэнки Кавамура. «Если все кошки в мире исчезнут»</li><li>Юй Хуа. «Жить»</li><li>Курт Воннегут. «Времетрясение»</li><li>Джек Лондон. «Странник по звездам»</li><li>Оноре де Бальзак. «Отец Горио»</li><li>Маргарет Этвуд. «Пенелопиада»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Чарльз Буковски. «Доллар и двадцать центов»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Татьяна Толстая. «Соня»</i><i>Говард Лавкрафт. «Тварь на пороге»</i><i>Айзек Азимов. «Приход ночи»</i><i>О. Генри. «Младенцы в джунглях»</i></div>
+      <details><summary>Все кандидаты · 9</summary><ol class="booklist"><li>Чарльз Буковски. «Доллар и двадцать центов»</li><li>Владимир Сорокин. «Очередь»</li><li>Татьяна Толстая. «Соня»</li><li>Говард Лавкрафт. «Тварь на пороге»</li><li>Осип Мандельштам. «Четвертая проза»</li><li>Сергей Довлатов. «Куртка Фернана Леже»</li><li>Теренций. «Девушка с Андроса»</li><li>Айзек Азимов. «Приход ночи»</li><li>О. Генри. «Младенцы в джунглях»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№08</b></div><div class="date">Июль 2026</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Маргарет Митчелл. «Унесённые ветром»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Саша Карепина. «Переписка 2.0. Как решать вопросы в чатах, соцсетях и письмах»</i><i>Маргарет Митчелл. «Унесённые ветром»</i><i>Лев Толстой. «Детство»</i><i>Михаил Пришвин. «Корабельная чаща»</i><i>Энди Вейер. «Марсианин»</i></div>
+      <details><summary>Все кандидаты · 10</summary><ol class="booklist"><li>Иван Гончаров. «Обломов»</li><li>Саша Карепина. «Переписка 2.0. Как решать вопросы в чатах, соцсетях и письмах»</li><li>Маргарет Митчелл. «Унесённые ветром»</li><li>Джеймс Джойс. «Улисс»</li><li>Лев Толстой. «Детство»</li><li>Герман Гессе. «Степной волк»</li><li>Аравинд Адига. «Белый тигр»</li><li>Михаил Пришвин. «Корабельная чаща»</li><li>Энди Вейер. «Марсианин»</li><li>Шэн Кэи. «Сестрички с севера»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Рэй Брэдбери. «Всё лето в один день»</strong></div>
+      <div class="finalists"><span>в отборе</span><i>Джек Лондон. «Жена короля»</i><i>Рэй Брэдбери. «Всё лето в один день»</i><i>Лев Толстой. «Холстомер»</i><i>Тадеуш Боровский. «Прощание с Марией»</i><i>Иван Бунин. «Мухи»</i></div>
+      <details><summary>Все кандидаты · 9</summary><ol class="booklist"><li>Джек Лондон. «Жена короля»</li><li>Татьяна Толстая. «Поэт и муза»</li><li>Надежда Тэффи. «Брошечка»</li><li>Рэй Брэдбери. «Всё лето в один день»</li><li>Александр Пушкин. «Медный всадник»</li><li>Лев Толстой. «Холстомер»</li><li>Кобо Абэ. «Солдат из сна»</li><li>Тадеуш Боровский. «Прощание с Марией»</li><li>Иван Бунин. «Мухи»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue">
+      <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№09</b></div><div class="date">Второй шанс</div></div>
+      <div class="forms">
+        <div class="form-card">
+      <div class="form-label">КРУПНАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Курт Воннегут. «Времетрясение»</strong></div>
+      
+      <details><summary>Все кандидаты · 7</summary><ol class="booklist"><li>Виктор Пелевин. «Жизнь насекомых»</li><li>Борис Зарьков. «ДНК Бренда. Как построить сильный бренд в индустрии гостеприимства и не только»</li><li>Диана Сеттерфилд. «Тринадцатая сказка»</li><li>Луиза Мэй Олкотт. «Маленькие женщины»</li><li>Линь Ихань. «Райский сад первой любви»</li><li>Дина Рубина. «На солнечной стороне улицы»</li><li>Курт Воннегут. «Времетрясение»</li></ol></details>
+    </div>
+        <div class="form-card">
+      <div class="form-label">МАЛАЯ ФОРМА</div>
+      <div class="winner"><span>выбрали</span><strong>Филип К. Дик. «Мы вам всё припомним»</strong></div>
+      
+      <details><summary>Все кандидаты · 7</summary><ol class="booklist"><li>Мопассан «Ночь»</li><li>Хан Чанхун. «Мне здесь нравится»</li><li>Сергей Довлатов. «Зимняя шапка»</li><li>Юкио Мисима. «Пионы»</li><li>Харлан Эллисон. «Покайся, Арлекин!» — сказал Тиктакщик»</li><li>Флип Дик. «Мы вам все припомним»</li><li>Говард Лавкрафт. «Тварь на пороге»</li></ol></details>
+    </div>
+      </div>
+    </article><article class="issue current">
+  <div class="tape">СЕЙЧАС</div>
+  <div class="issue-top"><div class="issue-no">ВЫПУСК <b>№10</b></div><div class="date">текущий</div></div>
+  <div class="forms">
+    <div class="form-card">
+          <div class="form-label">КРУПНАЯ ФОРМА</div>
+          <div class="waiting">выбор ещё идёт</div>
+          <ol class="booklist"><li>Йоав Блум — «Творец совпадений»</li><li>Оушен Вуонг — «Лишь краткий миг земной мы все прекрасны»</li><li>Дэн Браун — «Инферно»</li><li>Василий Аксёнов — «Звёздный билет»</li><li>Людмила Улицкая — «Даниэль Штайн, переводчик»</li></ol>
+        </div>
+    <div class="form-card">
+          <div class="form-label">МАЛАЯ ФОРМА</div>
+          <div class="waiting">выбор ещё идёт</div>
+          <ol class="booklist"><li>Сергей Довлатов — «Офицерский ремень»</li><li>О. Генри — «Из любви к искусству»</li><li>Александр Куприн — «Штабс-капитан Рыбников»</li><li>Харлан Эллисон — «„Покайся, Арлекин!“ — сказал Тиктакщик»</li><li>Надежда Тэффи — «Жизнь и воротник»</li></ol>
+        </div>
+  </div>
+  <a class="vote-btn" href="voting.html">Проголосовать</a>
+</article></main>
+<footer>Рисанкин Книжный Клуб · ранее в клубе</footer>
+</div></body></html>

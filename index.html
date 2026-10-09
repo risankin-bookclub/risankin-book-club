@@ -792,11 +792,29 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 
 /* Only the new spine: fit the long title without changing the shelf geometry. */
 .pb7 .title{font-size:12px;line-height:1;right:18px;top:9px;max-height:140px;overflow:hidden}
+
+/* Desktop-only layout: keep the approved mobile collage intact */
+@media(min-width:701px){
+ #now .reading-collage{min-height:690px!important;max-width:1050px;margin:28px auto 0}
+ #now .vonnegut{width:31%!important;left:7%!important;top:22px!important}
+ #now .von-caption{left:104%!important;top:13%!important;width:105%!important;margin-left:16px!important}
+ #now .von-caption h3{font-size:clamp(25px,2.6vw,36px)!important}
+ #now .dick{width:31%!important;right:7%!important;top:300px!important}
+ #now .dick .collage-cover{height:340px!important}
+ #now .paper-note{right:104%!important;top:29%!important;width:110%!important}
+ #now .paper-note h3{font-size:clamp(23px,2.4vw,31px)!important}
+}
+@media(min-width:701px) and (max-width:950px){
+ #now .reading-collage{min-height:620px!important}
+ #now .vonnegut{width:37%!important;left:4%!important}
+ #now .dick{width:36%!important;right:3%!important;top:295px!important}
+ #now .dick .collage-cover{height:295px!important}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav><b>РКК</b><div class="links"><a href="#now">Сейчас читаем</a><a href="#read">Мы прочитали</a><a href="stats.html">Статистика</a><a href="voting.html">Голосование</a></div><a href="previously.html">Ранее в клубе</a></nav>
+<nav><b>РКК</b><div class="links"><a href="#now">Сейчас читаем</a><a href="#read">Мы прочитали</a><a href="stats.html">Статистика</a></div><a href="previously.html">Ранее в клубе</a></nav>
 
 <header class="hero">
 <h1>Рисанкин<br>Книжный Клуб</h1>
@@ -879,33 +897,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 <p class="review">Здесь будет страница книги: рейтинг клуба, автор, ваша рецензия и детали. Обложка — в отдельной неровной рамке.</p>
 <div class="big-rating" id="modal-rating"></div></div>
 </div></div>
-<section class="vote-live" id="live-voting">
- <div class="vote-live-head">
-  <h2>Сейчас голосуем</h2>
-  <div class="vote-live-meta">проголосовало: <b id="voter-count">0</b> <span id="voter-word">человек</span></div>
- </div>
- <div class="vote-stats-sheet">
-  <div class="vote-columns">
-   <div class="vote-board">
-    <h3>Крупная форма</h3>
-    <div id="large-results"><div class="vote-row" data-vote-book="creator-coincidences"><div class="vote-name">Творец совпадений</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="on-earth-briefly-gorgeous"><div class="vote-name">Лишь краткий миг земной мы все прекрасны</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="inferno"><div class="vote-name">Инферно</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="star-ticket"><div class="vote-name">Звёздный билет</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="daniel-stein"><div class="vote-name">Даниэль Штайн, переводчик</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div></div>
-   </div>
-   <div class="vote-board">
-    <h3>Малая форма</h3>
-    <div id="small-results"><div class="vote-row" data-vote-book="officers-belt"><div class="vote-name">Офицерский ремень</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="for-love-of-art"><div class="vote-name">Из любви к искусству</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="captain-rybnikov"><div class="vote-name">Штабс-капитан Рыбников</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="repent-harlequin"><div class="vote-name">«Покайся, Арлекин!» — сказал Тиктакщик</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div>
-<div class="vote-row" data-vote-book="life-and-collar"><div class="vote-name">Жизнь и воротник</div><div class="vote-line"><i style="width:0%"></i></div><div class="vote-num">0</div></div></div>
-   </div>
-  </div>
-  <a class="vote-main-link" href="voting.html">Проголосовать</a>
- </div>
-</section>
+
 
 <footer><span>Рисанкин Книжный Клуб</span><span>архив клуба</span></footer>
 </div>
@@ -1028,6 +1020,6 @@ async function loadVoteResults(){
    /* The list remains visible with zeroes if the live request is unavailable. */
  }
 }
-document.addEventListener("DOMContentLoaded",()=>{loadRsvp();loadVoteResults();});
+document.addEventListener("DOMContentLoaded",()=>{loadRsvp();});
 </script>
 </body></html>

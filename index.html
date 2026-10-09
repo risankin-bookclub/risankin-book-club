@@ -810,6 +810,27 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
  #now .dick{width:36%!important;right:3%!important;top:295px!important}
  #now .dick .collage-cover{height:295px!important}
 }
+
+/* Desktop repair: meeting is one full-width canvas, not the old two-column grid. */
+@media (min-width:701px){
+ #now.collage-meeting{display:block!important;width:100%!important;min-width:0!important;padding:44px 52px 62px!important;}
+ #now .reading-collage{width:100%!important;max-width:960px!important;min-height:740px!important;margin:30px auto 0!important;position:relative!important;}
+ #now .collage-book{display:block!important;position:absolute!important;min-width:0!important;}
+ #now .vonnegut{left:4%!important;top:25px!important;width:35%!important;}
+ #now .vonnegut .collage-cover{width:100%!important;aspect-ratio:2/3!important;height:auto!important;}
+ #now .vonnegut .collage-cover img{width:100%!important;height:100%!important;object-fit:contain!important;}
+ #now .von-caption{left:107%!important;top:13%!important;width:125%!important;}
+ #now .dick{right:5%!important;top:345px!important;width:35%!important;}
+ #now .dick .collage-cover{width:100%!important;height:330px!important;}
+ #now .paper-note{right:110%!important;top:20%!important;width:116%!important;}
+}
+@media (min-width:701px) and (max-width:950px){
+ #now.collage-meeting{padding:35px 26px 55px!important;}
+ #now .reading-collage{min-height:690px!important;}
+ #now .vonnegut{width:37%!important;left:2%!important;}
+ #now .dick{width:37%!important;right:2%!important;top:330px!important;}
+ #now .von-caption{width:115%!important;}
+}
 </style>
 </head>
 <body>

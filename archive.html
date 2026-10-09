@@ -73,6 +73,8 @@ footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-
 @media(max-width:800px){
  .new-dick .spine,.new-timequake .spine{height:245px;margin-top:0}
 }
+.timequake-mobile{display:none}
+@media(max-width:800px){.timequake-mobile{display:inline}.timequake-desktop{display:none}}
 </style>
 </head>
 <body>
@@ -172,7 +174,7 @@ footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-
       </div>
     </a>
 <a class="book new-timequake" href="timequake.html">
-  <div class="spine"><span class="rank">11</span><div class="title">Времетрясение</div><div class="author">Курт Воннегут</div><div class="score">7,3<small>/10</small></div></div>
+  <div class="spine"><span class="rank">11</span><div class="title"><span class="timequake-mobile">Време-<br>трясение</span><span class="timequake-desktop">Времетрясение</span></div><div class="author">Курт Воннегут</div><div class="score">7,3<small>/10</small></div></div>
 </a>
 <a class="book shiva" href="dancing-shiva.html">
       <div class="spine">

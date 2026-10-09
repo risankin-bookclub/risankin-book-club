@@ -657,6 +657,141 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
  .vote-main-link{min-width:0;width:calc(100% - 30px);box-sizing:border-box}
 }
 
+
+/* November poster v1 — individual identity for Aksyonov + Kuprin */
+#now.collage-meeting{
+  background:
+    linear-gradient(115deg,rgba(166,55,43,.055),transparent 34%),
+    linear-gradient(300deg,rgba(37,75,100,.07),transparent 42%),
+    #efe4ca!important;
+}
+#now .meeting-kicker{display:inline-block;background:#202d2d;color:#f5ead1;padding:7px 11px;transform:rotate(-1.5deg)}
+#now .meeting-date{margin-top:20px;max-width:max-content;border-bottom:4px solid #b23d31;padding-bottom:8px}
+#now .reading-collage{min-height:970px;margin-top:5px}
+#now .vonnegut{left:3%;top:68px;width:54%;transform:rotate(-2.2deg)}
+#now .vonnegut .collage-cover{background:#d8c69d;padding:14px}
+#now .red-frame{border:7px solid #a93e31;box-shadow:-14px 15px 0 #c6ad72}
+#now .von-caption{
+  left:94%;top:18%;width:74%;margin-left:14px;
+  background:#f5ecd8;border:1px solid #24231f;padding:18px 17px;
+  box-shadow:7px 7px 0 #202d2d;transform:rotate(2.8deg)
+}
+#now .von-caption h3{font-style:normal;font-family:Georgia,serif;font-size:34px}
+#now .von-caption:before{content:"★";position:absolute;right:11px;top:-30px;font-size:34px;color:#a93e31;transform:rotate(12deg)}
+#now .dick{right:3%;top:520px;width:47%;transform:rotate(2deg)}
+#now .dick .collage-cover{background:#d7c99f;padding:14px}
+#now .blue-frame{border:7px solid #244f69;box-shadow:13px 14px 0 #d2a83f}
+#now .paper-note{
+  right:92%;top:29%;width:112%;padding:20px 18px;
+  background:#d7b74d;border:1px solid #24231f;transform:rotate(-3deg)
+}
+#now .paper-note h3{font-style:normal;font-family:Georgia,serif;font-size:31px;border:0;padding:0;margin-bottom:10px}
+#now .paper-note:after{content:"06 / 11";display:block;margin-top:15px;font:700 11px Arial,sans-serif;letter-spacing:.2em}
+#now .tape-a{width:110px;height:27px;background:rgba(83,102,89,.35);left:-31px;top:2px}
+#now .paperclip{font-size:0}
+#now .paperclip:after{content:"✦";font-size:46px;color:#a93e31}
+#now .doodle-red{right:-50%;top:63%;font-size:44px}
+#now .doodle-black{left:-78px;bottom:5%;font-size:0}
+#now .doodle-black:after{content:"★  ★";font-size:24px;letter-spacing:10px;color:#244f69}
+#now:after{
+ content:"";position:absolute;width:170px;height:170px;right:-75px;top:135px;
+ border:2px solid rgba(36,79,105,.55);border-radius:50%;transform:rotate(-12deg)
+}
+@media(max-width:700px){
+ #now .reading-collage{min-height:1030px}
+ #now .vonnegut{left:1%;top:38px;width:76%}
+ #now .von-caption{position:relative!important;left:auto!important;top:auto!important;width:88%!important;margin:-3px 0 0 18%!important}
+ #now .von-caption h3{font-size:28px}
+ #now .dick{right:0;top:595px;width:69%}
+ #now .paper-note{right:66%;top:25%;width:76%;padding:14px 12px}
+ #now .paper-note h3{font-size:24px}
+ #now:after{width:110px;height:110px;right:-58px;top:120px}
+}
+
+
+/* November poster v2 — layout corrections */
+#now .vonnegut{
+  width:48%;
+  left:2%;
+}
+#now .von-caption{
+  left:102%;
+  top:12%;
+  width:82%;
+  margin-left:18px;
+  z-index:8;
+}
+#now .dick{
+  width:40%;
+  right:2%;
+  top:535px;
+}
+#now .dick .collage-cover{
+  /* Рыбников — более узкий вертикальный формат, не растягиваем под Аксёнова */
+  aspect-ratio:auto;
+  padding:12px;
+}
+#now .dick .collage-cover img{
+  width:100%;
+  height:auto!important;
+  object-fit:contain!important;
+  display:block;
+}
+#now .paper-note{
+  right:98%;
+  top:37%;
+  width:125%;
+  z-index:7;
+}
+@media(max-width:700px){
+ #now .vonnegut{width:69%;left:0}
+ #now .von-caption{
+   position:relative!important;
+   left:auto!important;top:auto!important;
+   width:100%!important;
+   margin:8px 0 0 7%!important;
+   z-index:9;
+ }
+ #now .dick{width:58%;right:0;top:635px}
+ #now .paper-note{
+   right:72%;top:27%;width:92%;
+   z-index:8;
+ }
+}
+
+
+/* v3: restore a real visible frame for the small-form book */
+#now .dick{
+  width:43%;
+  right:2%;
+  top:525px;
+}
+#now .dick .collage-cover{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  height:430px!important;
+  padding:16px!important;
+  background:#d7c99f!important;
+  overflow:hidden!important;
+  border:7px solid #244f69!important;
+  box-shadow:13px 14px 0 #d2a83f!important;
+}
+#now .dick .collage-cover img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+@media(max-width:700px){
+ #now .dick{width:61%;right:0;top:640px}
+ #now .dick .collage-cover{height:350px!important;padding:12px!important}
+}
+
+/* Only the new spine: fit the long title without changing the shelf geometry. */
+.pb7 .title{font-size:12px;line-height:1;right:18px;top:9px;max-height:140px;overflow:hidden}
 </style>
 </head>
 <body>
@@ -670,31 +805,28 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 
 <section class="meeting collage-meeting" id="now">
   <div class="meeting-kicker">СЛЕДУЮЩАЯ ВСТРЕЧА</div>
-  <div class="meeting-date">2 ОКТЯБРЯ · 18:30</div>
-  <div class="place-line"><em>PaPaella</em> · Банковский переулок, 2/5
-    <a class="map-text" href="https://yandex.ru/maps/?text=PaPaella%20Банковский%20переулок%202%2F5%20Москва" target="_blank" rel="noopener">карта</a>
-  </div>
+  <div class="meeting-date">6 НОЯБРЯ · 19:00</div>
 
   <div class="reading-collage">
     <article class="collage-book vonnegut">
       <div class="tape tape-a"></div>
       <div class="collage-cover red-frame">
-        <img src="vremetryasenie.jpg" alt="Курт Воннегут — Времетрясение">
+        <img src="star-ticket.jpg" alt="Василий Аксёнов — Звёздный билет">
       </div>
       <div class="book-caption von-caption">
-        <h3>Времетрясение</h3>
-        <p>Курт Воннегут</p>
+        <h3>Звёздный билет</h3>
+        <p>Василий Аксёнов</p>
       </div>
       <span class="doodle doodle-red">☆</span>
     </article>
 
     <article class="collage-book dick">
       <div class="paper-note">
-        <h3>Мы вам всё<br>припомним</h3>
-        <p>Филип К. Дик</p>
+        <h3>Штабс-капитан<br>Рыбников</h3>
+        <p>Александр Куприн</p>
       </div>
       <div class="collage-cover blue-frame">
-        <img src="philip-k-dick.jpg" alt="Филип К. Дик — Вспомнить всё">
+        <img src="captain-rybnikov.jpg" alt="Александр Куприн — Штабс-капитан Рыбников">
       </div>
       <span class="paperclip">⌇</span>
       <span class="doodle doodle-black">✶</span>
@@ -704,7 +836,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 </section>
 <section class="live-rsvp" id="rsvp">
  <div class="rsvp-paper">
-  <div class="rsvp-kicker">2 октября · 18:30 · PaPaella</div>
+  <div class="rsvp-kicker">6 ноября · 19:00</div>
   <h2>Ты будешь?</h2>
   <div class="rsvp-actions">
    <button type="button" data-answer="yes" onclick="setRsvp('yes')">Буду</button>
@@ -720,7 +852,7 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 </section>
 <section id="read" class="read-library real-books">
 <h2 class="section-title">Мы прочитали</h2>
-<div class="archive-stamp"><b>14 книг</b><span>средняя оценка 7,6</span></div>
+<div class="archive-stamp"><b>16 книг</b><span>средняя оценка 7,6</span></div>
 
 <div class="physical-shelf">
   <div class="physical-books">
@@ -730,8 +862,8 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
     <a class="pbook pb4" href="reader.html"><span class="title">ЧТЕЦ</span><span class="author">Б. Шлинк</span></a>
     <a class="pbook pb5" href="fight-club.html"><span class="title">Бойцовский клуб</span><span class="author">Чак Паланик</span></a>
     <a class="pbook pb6" href="uncle-vanya.html"><span class="title">Дядя Ваня</span><span class="author">А. П. Чехов</span></a>
-    <a class="pbook pb7" href="burn-the-barn.html"><span class="title">Сжечь сарай</span><span class="author">Х. Мураками</span></a>
-    <a class="pbook pb8" href="if-cats-disappeared.html"><span class="title">Если все кошки в мире исчезнут</span><span class="author">Г. Кавамура</span></a>
+    <a class="pbook pb7" href="we-can-remember-it-for-you-wholesale.html"><span class="title">Мы вам всё припомним</span><span class="author">Ф. К. Дик</span></a>
+    <a class="pbook pb8" href="burn-the-barn.html"><span class="title">Сжечь сарай</span><span class="author">Х. Мураками</span></a>
   </div>
   <div class="shelf-board"></div>
 </div>
@@ -830,7 +962,7 @@ function refreshWho(){
   });
 }
 
-const MEETING_ID="2026-10-02-papaella";
+const MEETING_ID="2026-11-06";
 async function loadRsvp(){
  try{
   const res=await fetch(`${SB_URL}/rest/v1/rsvp?meeting_id=eq.${MEETING_ID}&select=participant_id,answer`,{headers:SB_HEADERS});

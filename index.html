@@ -911,6 +911,22 @@ display:grid;grid-template-columns:.75fr 1fr;gap:40px;box-shadow:10px 12px 0 #00
 <a class="archive-more" href="archive.html">Открыть остальной архив</a>
 </section>
 
+<section class="vote-live" id="vote-live" aria-label="Текущие результаты голосования">
+ <div class="vote-live-head"><h2>Как голосует<br>клуб?</h2><div class="vote-live-meta"><b id="voter-count">—</b> участников<br>проголосовало</div></div>
+ <div class="vote-stats-sheet"><div class="vote-columns">
+ <div class="vote-board" id="large-results"><h3>Крупная форма</h3><div class="vote-row" data-vote-book="babel-odessa"><span class="vote-name">Одесские рассказы</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="gaiman-coraline"><span class="vote-name">Коралина</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="kafka-trial"><span class="vote-name">Процесс</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="tolstoy-childhood"><span class="vote-name">Детство</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="shakespeare-julius-caesar"><span class="vote-name">Юлий Цезарь</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div></div>
+ <div class="vote-board" id="small-results"><h3>Малая форма</h3><div class="vote-row" data-vote-book="joyce-dead"><span class="vote-name">Мёртвые</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="lovecraft-dunwich"><span class="vote-name">Ужас Данвича</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="mann-clown"><span class="vote-name">Паяц</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="brodsky-eclogue-5"><span class="vote-name">Эклога 5-я (летняя)</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div>
+<div class="vote-row" data-vote-book="borges-tlon"><span class="vote-name">Тлён, Укбар, Орбис Терциус</span><span class="vote-line"><i></i></span><b class="vote-num">0</b></div></div>
+ </div></div><a class="vote-main-link" href="voting.html">Проголосовать за книги →</a>
+</section>
+
 <div id="book-modal" class="modal" onclick="if(event.target===this)closeBook()">
 <div class="book-page">
 <button class="close" onclick="closeBook()">×</button>
@@ -1004,22 +1020,10 @@ async function setRsvp(answer){
  await loadRsvp();
 }
 
-const VOTING_ID="next-meeting-2026-10";
+const VOTING_ID="next-meeting-2026-11";
 const VOTE_BOOKS={
- large:[
-  ["creator-coincidences","Творец совпадений"],
-  ["on-earth-briefly-gorgeous","Лишь краткий миг земной мы все прекрасны"],
-  ["inferno","Инферно"],
-  ["star-ticket","Звёздный билет"],
-  ["daniel-stein","Даниэль Штайн, переводчик"]
- ],
- small:[
-  ["officers-belt","Офицерский ремень"],
-  ["for-love-of-art","Из любви к искусству"],
-  ["captain-rybnikov","Штабс-капитан Рыбников"],
-  ["repent-harlequin","«Покайся, Арлекин!» — сказал Тиктакщик"],
-  ["life-and-collar","Жизнь и воротник"]
- ]
+ large:[['babel-odessa', 'Одесские рассказы'], ['gaiman-coraline', 'Коралина'], ['kafka-trial', 'Процесс'], ['tolstoy-childhood', 'Детство'], ['shakespeare-julius-caesar', 'Юлий Цезарь']],
+ small:[['joyce-dead', 'Мёртвые'], ['lovecraft-dunwich', 'Ужас Данвича'], ['mann-clown', 'Паяц'], ['brodsky-eclogue-5', 'Эклога 5-я [летняя]'], ['borges-tlon', 'Тлён, Укбар, Орбис Терциус']]
 };
 async function loadVoteResults(){
  try{
@@ -1039,9 +1043,9 @@ async function loadVoteResults(){
     });
   });
  }catch(e){
-   /* The list remains visible with zeroes if the live request is unavailable. */
+   document.getElementById("voter-count").textContent="—";
  }
 }
-document.addEventListener("DOMContentLoaded",()=>{loadRsvp();});
+document.addEventListener("DOMContentLoaded",()=>{loadRsvp();loadVoteResults();});
 </script>
 </body></html>

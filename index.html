@@ -1017,6 +1017,17 @@ async function setRsvp(answer){
    method:"POST",headers:{...SB_HEADERS,"Prefer":"resolution=merge-duplicates"},body:JSON.stringify(body)
  });
  if(!res.ok){document.getElementById("rsvp-status").textContent="Не удалось сохранить ответ.";return;}
+ try {
+  const nameRes=await fetch(`${SB_URL}/rest/v1/rpc/save_rsvp_participant_name`,{
+   method:"POST",headers:SB_HEADERS,
+   body:JSON.stringify({p_meeting_id:MEETING_ID,p_participant_id:pid,p_full_name:participantName(),p_answer:answer})
+  });
+  if(!nameRes.ok) throw new Error(await nameRes.text());
+ } catch(e) {
+  await loadRsvp();
+  document.getElementById("rsvp-status").textContent="Ответ сохранён, но имя не удалось записать в список. Сообщи организатору.";
+  return;
+ }
  await loadRsvp();
 }
 

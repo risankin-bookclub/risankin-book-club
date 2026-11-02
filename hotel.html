@@ -95,5 +95,18 @@ footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-
 
 <footer><span>Рисанкин Книжный Клуб</span><span>архив книг</span></footer>
 </div>
+<style>.reader-reviews{max-width:960px;margin:36px auto;padding:24px;background:#f8f0df;color:#26211b;border:1px solid #c3b59c}.reader-reviews h2{font-family:Georgia,serif;font-size:27px;margin:0 0 12px}.reader-reviews a{color:#a14d3d}.reader-review{border-top:1px solid #c3b59c;padding:15px 0}.reader-review p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6;margin:8px 0 0}.reader-review small{opacity:.65}.reviews-list{line-height:1.6}</style><section id="readerReviews" class="reader-reviews" data-book-id="hotel"><h2>Рецензии читателей</h2><p>Поделиться впечатлениями можно в <a href="account.html">личной полке</a> после оценки книги.</p><div class="reviews-list">Загружаем рецензии…</div></section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+(async()=>{
+ const root=document.getElementById('readerReviews');if(!root||!window.supabase)return;
+ const client=window.supabase.createClient('https://ucdbshgntaqtojsuzvqb.supabase.co','sb_publishable_4MG1e0_NkmBoFfV4o6-v4g_oAAeeDfv');
+ const {data,error}=await client.from('book_reviews').select('display_name,review_text,updated_at').eq('book_id',root.dataset.bookId).order('updated_at',{ascending:false}).limit(100);
+ if(error){root.querySelector('.reviews-list').textContent='Не удалось загрузить рецензии.';return;}
+ const list=root.querySelector('.reviews-list');list.replaceChildren();
+ if(!data?.length){list.textContent='Пока нет рецензий. Стань первым читателем, который поделится впечатлениями!';return;}
+ for(const r of data){const article=document.createElement('article');article.className='reader-review';const head=document.createElement('strong');head.textContent=r.display_name||'Читатель';const date=document.createElement('small');date.textContent=' · '+new Date(r.updated_at).toLocaleDateString('ru-RU');const body=document.createElement('p');body.textContent=r.review_text;article.append(head,date,body);list.append(article);}
+})();
+</script>
 </body>
 </html>

@@ -6,4 +6,47 @@
 .memory{position:relative;min-height:465px;border:2px solid var(--ink);background:#8199a1;transform:rotate(2deg);box-shadow:11px 12px 0 var(--ink);padding:22px;overflow:hidden}.memory:before{content:"ДЕЛО № 07 / ВОСПОМИНАНИЯ";position:absolute;top:0;left:0;right:0;padding:13px 18px;background:var(--ink);color:var(--paper);font-size:10px;letter-spacing:.16em}.circle{width:220px;height:220px;border:16px solid #e8dec4;border-radius:50%;margin:67px auto 8px;box-shadow:0 0 0 2px var(--ink),inset 0 0 0 2px var(--ink);display:flex;align-items:center;justify-content:center;background:#344e59;position:relative}.circle:before{content:"";position:absolute;width:48px;height:48px;background:#d5b75e;border-radius:50%;border:2px solid var(--ink)}.circle:after{content:"";position:absolute;width:110px;height:2px;background:#d5b75e;transform:rotate(-34deg)}.record{text-align:center;font:11px/1.4 Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase}.slip{position:absolute;right:-5px;bottom:18px;background:var(--yellow);border:1px solid;padding:15px;transform:rotate(-7deg);font:20px/1.1 Georgia,serif;max-width:220px;box-shadow:4px 5px 0 var(--ink)}.serial{position:absolute;top:63px;left:20px;font-size:10px;letter-spacing:.15em;writing-mode:vertical-rl}
 .divider{height:1px;background:var(--ink)}.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:44px 0 24px}h2{font:400 clamp(42px,7vw,76px)/.95 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:-.055em;margin:0}.section-head span{font-size:10px;letter-spacing:.14em;text-transform:uppercase}.review{display:grid;grid-template-columns:1fr 1fr;gap:30px 55px;padding-bottom:75px}.review p{font:19px/1.55 Georgia,serif;margin:0}.review p:first-child{grid-column:1}.review p:nth-child(2){grid-column:2}.review p:nth-child(3){grid-column:1 / -1;max-width:730px}.highlight{background:var(--rust);color:#f8ecd9;grid-column:1 / -1;padding:24px 30px;transform:rotate(-1deg);box-shadow:6px 7px 0 var(--ink);font:400 clamp(28px,4.2vw,49px)/1.05 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:-.04em}footer{display:flex;justify-content:space-between;gap:15px;border-top:1px solid;padding:20px 0 40px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:700px){.wrap{padding:16px}.hero{grid-template-columns:1fr;gap:35px;padding:42px 0 55px}h1{font-size:clamp(59px,14vw,95px)}.memory{min-height:390px}.circle{width:180px;height:180px;margin-top:65px}.slip{font-size:16px;max-width:170px}.section-head{align-items:flex-start;flex-direction:column}.review{grid-template-columns:1fr;gap:24px}.review p:first-child,.review p:nth-child(2),.review p:nth-child(3),.highlight{grid-column:1}.review p{font-size:17px}}
-</style></head><body><div class="wrap"><nav><b>РКК</b><a href="archive.html">← обратно к архиву</a></nav><main><section class="hero"><div><div class="kicker">№ 07 в рейтинге клуба · Филип К. Дик</div><h1>Мы вам всё припомним</h1><div class="author">Филип К. Дик</div><div class="rating">7,6<small>/10</small></div></div><div class="memory"><div class="serial">ЗАПИСЬ / 1966 / 07</div><div class="circle"></div><div class="record">Архив воспоминаний<br>Оригинал или реконструкция?</div><div class="slip">А что, если воспоминания можно заказать?</div></div></section><div class="divider"></div><section><div class="section-head"><h2>Протокол воспоминаний</h2><span>Рецензия книжного клуба</span></div><div class="review"><p>Узнали, что по этому произведению снят фильм — по словам участников, очень крутой. Правда, скорее вдохновились: за основу взяли только идею, а не сам сюжет.</p><p>И снова поражаемся, как в такое короткое произведение можно уместить столько событий и сюжета! Наверное, именно поэтому оценка получилась такой высокой.</p><p>История не отпускает с самого начала, а ещё очень визуально читается. Так что теперь понятно, почему из неё захотелось сделать фильм.</p><div class="highlight">Короткое произведение. Невероятно много событий.</div></div></section></main><footer><span>Рисанкин Книжный Клуб</span><span>архив книг</span></footer></div></body></html>
+</style><style>
+#rkk-analytics-banner{position:fixed;bottom:14px;left:14px;right:14px;max-width:700px;margin:auto;z-index:99999;background:#fff9eb;color:#171713;border:1px solid #a58d68;border-radius:12px;box-shadow:0 6px 25px #0003;padding:16px;font:14px/1.5 Arial,sans-serif}
+#rkk-analytics-banner[hidden]{display:none!important}
+#rkk-analytics-banner p{margin:0 0 12px}
+#rkk-analytics-banner a{color:#31578a;text-decoration:underline}
+#rkk-analytics-banner .rkk-buttons{display:flex;gap:8px;flex-wrap:wrap}
+#rkk-analytics-banner button{cursor:pointer;padding:9px 15px;border-radius:7px;border:1px solid #171713;font:inherit;background:#f6eddc;color:#171713}
+#rkk-analytics-banner button:first-child{background:#171713;color:white}
+#rkk-analytics-settings{position:fixed;right:12px;bottom:8px;z-index:99998;font:11px Arial,sans-serif;color:#45413c;background:#f3ead7e8;border:1px solid #aaa;border-radius:5px;padding:4px 7px;cursor:pointer}
+</style>
+<script>
+/* Yandex Metrica: loads only after visitor consent; counter 114005680 */
+(function(){
+  var key='rkk_analytics_consent_v1';
+  var started=false;
+  function startMetrika(){
+    if(started)return;started=true;
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r)return;}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+    })(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+    ym(114005680,'init',{ssr:true,clickmap:false,trackLinks:false,accurateTrackBounce:true});
+  }
+  function readChoice(){try{return localStorage.getItem(key)}catch(e){return null}}
+  function saveChoice(choice){try{localStorage.setItem(key,choice)}catch(e){}}
+  function render(){
+    var banner=document.getElementById('rkk-analytics-banner');
+    if(!banner)return;
+    banner.hidden=readChoice()==='yes'||readChoice()==='no';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var banner=document.createElement('div');banner.id='rkk-analytics-banner';banner.hidden=true;
+    banner.innerHTML='<p><strong>Аналитика посещений.</strong> С вашего согласия мы используем Яндекс Метрику, чтобы понимать, сколько людей посещает книжный клуб и какие страницы интересны. Метрика может использовать cookie и передавать технические данные Яндексу. <a href="https://yandex.ru/legal/metrica_termsofuse/" target="_blank" rel="noopener noreferrer">Подробнее</a>.</p><div class="rkk-buttons"><button type="button" id="rkk-analytics-yes">Разрешить аналитику</button><button type="button" id="rkk-analytics-no">Не разрешать</button></div>';
+    document.body.appendChild(banner);
+    var settings=document.createElement('button');settings.type='button';settings.id='rkk-analytics-settings';settings.textContent='Настройки аналитики';document.body.appendChild(settings);
+    document.getElementById('rkk-analytics-yes').addEventListener('click',function(){saveChoice('yes');render();startMetrika()});
+    document.getElementById('rkk-analytics-no').addEventListener('click',function(){saveChoice('no');render()});
+    settings.addEventListener('click',function(){saveChoice('no');banner.hidden=false});
+    if(readChoice()==='yes')startMetrika();
+    render();
+  });
+})();
+</script>
+</head><body><div class="wrap"><nav><b>РКК</b><a href="archive.html">← обратно к архиву</a></nav><main><section class="hero"><div><div class="kicker">№ 07 в рейтинге клуба · Филип К. Дик</div><h1>Мы вам всё припомним</h1><div class="author">Филип К. Дик</div><div class="rating">7,6<small>/10</small></div></div><div class="memory"><div class="serial">ЗАПИСЬ / 1966 / 07</div><div class="circle"></div><div class="record">Архив воспоминаний<br>Оригинал или реконструкция?</div><div class="slip">А что, если воспоминания можно заказать?</div></div></section><div class="divider"></div><section><div class="section-head"><h2>Протокол воспоминаний</h2><span>Рецензия книжного клуба</span></div><div class="review"><p>Узнали, что по этому произведению снят фильм — по словам участников, очень крутой. Правда, скорее вдохновились: за основу взяли только идею, а не сам сюжет.</p><p>И снова поражаемся, как в такое короткое произведение можно уместить столько событий и сюжета! Наверное, именно поэтому оценка получилась такой высокой.</p><p>История не отпускает с самого начала, а ещё очень визуально читается. Так что теперь понятно, почему из неё захотелось сделать фильм.</p><div class="highlight">Короткое произведение. Невероятно много событий.</div></div></section></main><footer><span>Рисанкин Книжный Клуб</span><span>архив книг</span></footer></div></body></html>

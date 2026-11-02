@@ -52,6 +52,49 @@ footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-
  footer{gap:16px;flex-wrap:wrap}
 }
 </style>
+<style>
+#rkk-analytics-banner{position:fixed;bottom:14px;left:14px;right:14px;max-width:700px;margin:auto;z-index:99999;background:#fff9eb;color:#171713;border:1px solid #a58d68;border-radius:12px;box-shadow:0 6px 25px #0003;padding:16px;font:14px/1.5 Arial,sans-serif}
+#rkk-analytics-banner[hidden]{display:none!important}
+#rkk-analytics-banner p{margin:0 0 12px}
+#rkk-analytics-banner a{color:#31578a;text-decoration:underline}
+#rkk-analytics-banner .rkk-buttons{display:flex;gap:8px;flex-wrap:wrap}
+#rkk-analytics-banner button{cursor:pointer;padding:9px 15px;border-radius:7px;border:1px solid #171713;font:inherit;background:#f6eddc;color:#171713}
+#rkk-analytics-banner button:first-child{background:#171713;color:white}
+#rkk-analytics-settings{position:fixed;right:12px;bottom:8px;z-index:99998;font:11px Arial,sans-serif;color:#45413c;background:#f3ead7e8;border:1px solid #aaa;border-radius:5px;padding:4px 7px;cursor:pointer}
+</style>
+<script>
+/* Yandex Metrica: loads only after visitor consent; counter 114005680 */
+(function(){
+  var key='rkk_analytics_consent_v1';
+  var started=false;
+  function startMetrika(){
+    if(started)return;started=true;
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r)return;}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+    })(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+    ym(114005680,'init',{ssr:true,clickmap:false,trackLinks:false,accurateTrackBounce:true});
+  }
+  function readChoice(){try{return localStorage.getItem(key)}catch(e){return null}}
+  function saveChoice(choice){try{localStorage.setItem(key,choice)}catch(e){}}
+  function render(){
+    var banner=document.getElementById('rkk-analytics-banner');
+    if(!banner)return;
+    banner.hidden=readChoice()==='yes'||readChoice()==='no';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var banner=document.createElement('div');banner.id='rkk-analytics-banner';banner.hidden=true;
+    banner.innerHTML='<p><strong>Аналитика посещений.</strong> С вашего согласия мы используем Яндекс Метрику, чтобы понимать, сколько людей посещает книжный клуб и какие страницы интересны. Метрика может использовать cookie и передавать технические данные Яндексу. <a href="https://yandex.ru/legal/metrica_termsofuse/" target="_blank" rel="noopener noreferrer">Подробнее</a>.</p><div class="rkk-buttons"><button type="button" id="rkk-analytics-yes">Разрешить аналитику</button><button type="button" id="rkk-analytics-no">Не разрешать</button></div>';
+    document.body.appendChild(banner);
+    var settings=document.createElement('button');settings.type='button';settings.id='rkk-analytics-settings';settings.textContent='Настройки аналитики';document.body.appendChild(settings);
+    document.getElementById('rkk-analytics-yes').addEventListener('click',function(){saveChoice('yes');render();startMetrika()});
+    document.getElementById('rkk-analytics-no').addEventListener('click',function(){saveChoice('no');render()});
+    settings.addEventListener('click',function(){saveChoice('no');banner.hidden=false});
+    if(readChoice()==='yes')startMetrika();
+    render();
+  });
+})();
+</script>
 </head>
 <body>
 <div class="wrap">

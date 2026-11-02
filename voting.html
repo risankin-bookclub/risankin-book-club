@@ -131,6 +131,19 @@ function refreshWho(){
 }
 
 const VOTING_ID="next-meeting-2026-11";
+// Names are stored separately. Public visitors have INSERT permission only;
+// only the Supabase project owner can view the private table in Table Editor.
+async function registerParticipantName(pid){
+ const fullName=esc(participantName());
+ if(!fullName)return;
+ const response=await fetch(`${SB_URL}/rest/v1/rpc/save_voting_participant_name`,{
+  method:"POST",
+  headers:SB_HEADERS,
+  body:JSON.stringify({p_voting_id:VOTING_ID,p_participant_id:pid,p_full_name:fullName})
+ });
+ if(!response.ok)throw new Error("Не удалось сохранить имя участника: "+await response.text());
+}
+
 const boxes=[...document.querySelectorAll('input[type=checkbox]')];
 const btn=document.querySelector('#save'), done=document.querySelector('.done');
 function update(){
@@ -164,7 +177,11 @@ async function saveVotes(){
    r=await fetch(`${SB_URL}/rest/v1/book_votes`,{method:"POST",headers:SB_HEADERS,body:JSON.stringify(rows)});
    if(!r.ok) throw new Error(await r.text());
   }
-  done.textContent="Голос сохранён."; done.style.display="block";
+  // A name write failure must not incorrectly report that the vote failed.
+  let nameSaved=true;
+  try{await registerParticipantName(pid);}catch(e){nameSaved=false;console.warn(e);}
+  done.textContent=nameSaved ? "Голос сохранён." : "Голос сохранён, но имя не записалось. Сообщи организатору.";
+  done.style.display="block";
  }catch(e){done.textContent="Не удалось сохранить голос. Попробуй ещё раз.";done.style.display="block";}
  btn.textContent="Сохранить мой выбор"; update(); done.style.display="block";
 }

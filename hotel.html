@@ -101,7 +101,7 @@ footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-
 (async()=>{
  const root=document.getElementById('readerReviews');if(!root||!window.supabase)return;
  const client=window.supabase.createClient('https://ucdbshgntaqtojsuzvqb.supabase.co','sb_publishable_4MG1e0_NkmBoFfV4o6-v4g_oAAeeDfv');
- const {data,error}=await client.from('book_reviews').select('display_name,review_text,updated_at').eq('book_id',root.dataset.bookId).order('updated_at',{ascending:false}).limit(100);
+ const {data,error}=await client.from('book_reviews').select('display_name,review_text,updated_at').in('book_id',["hotel", "book-0d3417e98698"]).order('updated_at',{ascending:false}).limit(100);
  if(error){root.querySelector('.reviews-list').textContent='Не удалось загрузить рецензии.';return;}
  const list=root.querySelector('.reviews-list');list.replaceChildren();
  if(!data?.length){list.textContent='Пока нет рецензий. Стань первым читателем, который поделится впечатлениями!';return;}

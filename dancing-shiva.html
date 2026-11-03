@@ -102,5 +102,21 @@ footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script defer src="unified-ratings.js"></script>
+<section id="readerReviews" class="reader-reviews" data-book-id="dancing-shiva"><h2>Рецензии читателей</h2><div class="reviews-list">Загружаем рецензии…</div></section>
+<style>
+.book-action-panel{max-width:960px;margin:35px auto;padding:26px;background:#f4ead8;color:#30271f;border:1px solid #b8a68d;font:15px/1.5 Georgia,serif;box-sizing:border-box}
+.book-action-panel h2{font:normal 30px Georgia,serif;margin:0 0 9px}.book-action-panel p{margin:6px 0 14px}.book-action-panel label{display:block;margin:14px 0 6px}.book-action-panel select,.book-action-panel textarea{box-sizing:border-box;width:100%;padding:10px;background:#fffaf1;color:#30271f;border:1px solid #a99982;font:inherit}.book-action-panel textarea{min-height:115px;resize:vertical}.book-action-panel button{padding:10px 17px;margin-top:13px;border:0;background:#783c43;color:#fffaf1;font:inherit;cursor:pointer}.book-action-panel button:disabled{opacity:.5;cursor:wait}.book-action-panel .book-action-note{font:13px/1.5 Arial,sans-serif;margin-top:12px}.book-action-panel a{color:#783c43}.book-action-panel [hidden]{display:none!important}
+</style>
+<section class="book-action-panel" id="bookActionPanel" data-book-id="dancing-shiva" data-book-aliases="dancing-shiva,book-4a1f5397047e">
+<h2>Моя читательская запись</h2><p>Добавь произведение на свою полку, поставь оценку и поделись впечатлениями — прямо здесь.</p>
+<div id="bookActionLogin" hidden>Чтобы сохранить запись, <a href="account.html">войди или зарегистрируйся</a> в личном кабинете.</div>
+<div id="bookActionForm" hidden>
+<label for="bookActionStatus">На какой полке?</label><select id="bookActionStatus"><option value="">Не добавлено</option><option value="want">Хочу прочитать</option><option value="reading">Читаю</option><option value="read">Прочитано</option></select>
+<div id="bookActionRead" hidden><label for="bookActionRating">Моя оценка</label><select id="bookActionRating"><option value="">Пока без оценки</option><option value="1">1 / 10</option><option value="2">2 / 10</option><option value="3">3 / 10</option><option value="4">4 / 10</option><option value="5">5 / 10</option><option value="6">6 / 10</option><option value="7">7 / 10</option><option value="8">8 / 10</option><option value="9">9 / 10</option><option value="10">10 / 10</option></select><label for="bookActionReview">Моя рецензия (необязательно)</label><textarea id="bookActionReview" maxlength="5000" placeholder="Что ты думаешь об этой книге?"></textarea></div>
+<button type="button" id="bookActionSave">Сохранить на полке</button><p class="book-action-note" id="bookActionMessage" role="status" aria-live="polite"></p></div>
+<p class="book-action-note" id="bookActionLoading">Проверяем авторизацию…</p>
+</section>
+<script defer src="book-actions.js"></script>
+<style>.reader-reviews{max-width:960px;margin:36px auto;padding:24px;background:#f8f0df;color:#26211b;border:1px solid #c3b59c}.reader-reviews h2{font:27px Georgia,serif}.reader-review{border-top:1px solid #c3b59c;padding:15px 0}.reader-review p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}</style><script defer src="book-reviews-public.js"></script>
 </body>
 </html>

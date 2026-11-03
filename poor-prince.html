@@ -92,5 +92,6 @@ footer{border-top:1px solid var(--ink);padding:20px 0 40px;display:flex;justify-
  for(const r of data){const article=document.createElement('article');article.className='reader-review';const head=document.createElement('strong');head.textContent=r.display_name||'Читатель';const date=document.createElement('small');date.textContent=' · '+new Date(r.updated_at).toLocaleDateString('ru-RU');const body=document.createElement('p');body.textContent=r.review_text;article.append(head,date,body);list.append(article);}
 })();
 </script>
+<script defer src="unified-ratings.js"></script>
 </body>
 </html>
